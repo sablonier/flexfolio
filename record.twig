@@ -1,0 +1,144 @@
+{% include 'partials/_header.twig' %}
+
+<body>
+    {% set ids = [] %}
+    {% include 'partials/_navbar.twig' %}
+    <div class="container-fluid">
+        <div class="row">
+            {# first wide column with record content #}
+            {# ------------------------------------- #}
+            <div class="col-sm-12 col-md-6 col-lg-6 col-xl-7">
+                <div class="card">
+                    <div class="card-block">
+                        {# title #}
+                        {# ----- #}
+                        <h4 class="card-title"> {{ record.title }}</h4>
+                        {# image, video, document #}
+                        {# ----- #}
+                        {% if record.gallery != "" %}
+                            {% for item in record.gallery %}
+                                {% if item.image.file != "" %}
+                                    {% set checkimage = item.image.file %}
+                                    <div class="card">
+                                    {% set oimage = {   'height': imageinfo(checkimage).height, 
+                                                        'width': imageinfo(checkimage).width } %}
+                                    {% set rwidth = {   'small': '480', 'medium': '640', 'large': '1024', 'xlarge': '1400'} %}
+                                    {% set rheight = {  'small': oimage.height*rwidth.small/oimage.width, 
+                                                        'medium': oimage.height*rwidth.medium/oimage.width, 
+                                                        'large': oimage.height*rwidth.large/oimage.width, 
+                                                        'xlarge': oimage.height*rwidth.xlarge/oimage.width } %}
+                                    <img src="{{ checkimage|thumbnail(rwidth.large, rheight.large, 'r') }}" width="100%" alt="{{ card.gallery[0].text }}">
+                                    <div class="card-text small">
+                                        {{ item.text }}
+                                    </div>
+                                </div>
+                                {% elseif item.video != ""%}
+                                <div class="card">
+                                    <video width="100%" controls src="/files/{{ item.video }}">
+                                        Sorry, your browser doesn't support embedded videos, you can <a href="{{ item.video }}">download it</a>
+                                        and watch it with your favorite video player.
+                                    </video>
+                                    <div class="card-text small">
+                                        {{ item.text }}
+                                    </div>
+                                </div>
+                                {% elseif item.document != ""%}
+                                        <a href="/files/{{ item.document }}">
+                                        {% if item.preview.file != "" %}
+                                            {% set checkimage = item.preview.file %}
+                                        
+                                        <div class="card" >
+                                        {% set oimage = {   'height': imageinfo(checkimage).height, 
+                                                            'width': imageinfo(checkimage).width } %}
+                                        {% set rwidth = {   'small': '480', 'medium': '640', 'large': '1024', 'xlarge': '1400'} %}
+                                        {% set rheight = {  'small': oimage.height*rwidth.small/oimage.width, 
+                                                            'medium': oimage.height*rwidth.medium/oimage.width, 
+                                                            'large': oimage.height*rwidth.large/oimage.width, 
+                                                            'xlarge': oimage.height*rwidth.xlarge/oimage.width } %}
+                                        <img src="{{ checkimage|thumbnail(rwidth.large, rheight.large, 'r') }}" width="100%" alt="{{ item.text }}">
+                                        {% else %}
+                                        <div class="card" >
+                                        <img src="/theme/flexfolio/images/missing_preview.png" width="100%" alt="{{ item.text }}">
+                                        {% endif %}
+        
+                                        <div class="carousel-item-overlay">
+                                            <span class="icon-down-circled">&nbsp;{{ "Download"}}</span>
+                                        </div>
+                                        </a>
+                                        <div class="card-text small">
+                                        {{ item.text }}
+                                        </div>
+                                    </div>
+                                {% endif %}
+                            {% endfor %}
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+            {# second column with related stuff if available #}
+            {# --------------------------------------------- #}
+            <div class="col-sm-12 col-md-6 col-lg-6 col-xl-5">
+                {# text #}
+                {# ---- #}
+                <div class="card">
+                    <div class="card-block">
+                        {{ record.text }}
+                        {# show other records with same relation #}
+                        {# --------------------------------- #}
+                        <h6 style="border-bottom: 1px solid black;"> Weitere Arbeiten:</h6>
+                        {% setcontent rels = 'work' %}
+                        {% for rel in rels %}
+                        {% if rel.related == record.related() %}
+                        <h4 class="card-title" style="margin-bottom: 0.2rem; border-bottom: 1px solid black;">
+                            <a href="{{ rel.link }}">
+                                {{ rel.title }}</a>
+                        </h4>
+                        {% endif %}
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+
+<!-- Scroll down button -->
+<script>
+    function scrollButton() {
+        var x = document.getElementById("scrolldown");
+        x.className = "show";
+        setTimeout(function () {
+            x.className = x.className.replace("show", "");
+        }, 5000);
+    }
+    window.onload = function () {
+        scrollButton();
+    }
+
+    window.onscroll = function () {
+        scrollFunction()
+    };
+
+    function scrollFunction() {
+        if (document.body.scrollTop > 40 || document.documentElement.scrollTop > 40) {
+            document.getElementById("scrollup").style.display = "block";
+            setTimeout(function () {
+                document.getElementById("scrollup").style.display = ("none");
+            }, 8000);
+        } else {
+            document.getElementById("scrollup").style.display = "none";
+        }
+    }
+
+    function topFunction() {
+        var body = document.body,
+        html = document.documentElement;
+
+        var height = Math.max( body.scrollHeight, body.offsetHeight, 
+                       html.clientHeight, html.scrollHeight, html.offsetHeight );
+
+        document.body.scrollTop = 0; // For Safari
+        document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+    }
+    </script>
+    <div id="scrolldown"><span class="icon-down-open"></span></div> 
+    <div onclick="topFunction();" id="scrollup"><span class="icon-up-open"></span></div>
+    {% include 'partials/_footer.twig' %}

@@ -1,0 +1,26 @@
+---
+engines:
+  csslint:
+    enabled: true
+    # ... CONFIG CONTENT ...
+    checks:
+      fallback-colors:
+        enabled: false
+  duplication:
+    enabled: true
+    config:
+      languages:
+      - javascript
+      - php
+  eslint:
+    enabled: true
+  fixme:
+    enabled: true
+ratings:
+  paths:
+  - "**.css"
+  - "**.js"
+  - "**.php"
+exclude_paths:
+  - "css/bootstrap*.*"
+  - "js/bootstrap*.*"

@@ -1,0 +1,191 @@
+# This file defines the contenttypes on the website. See the documentation for
+# details: https://docs.bolt.cm/contenttypes/intro
+
+
+settings:
+    name: Einstellungen
+    singular_name: Einstellung
+    fields:
+        locale:
+            type: locale
+            group: Einstellungen
+        homesort:
+            label: Sortierung auf der Startseite (Zufall oder nach Datum)
+            enlabel: Sort
+            type: select
+            values: [ random, latest ]
+            default: 'random'
+            group: Einstellungen
+        homecount:
+            label: Anzahl Objekte auf der Startseite
+            type: integer
+            default: 8
+            group: Einstellungen
+        footer:
+            label: Fusszeile
+            type: html
+            group: Einstellungen
+            translatable: true
+            default: all-mine.org --- Change footer in settings.
+        dedata:
+            type: hidden
+        deslug:
+            type: locale_data
+            index: true
+        endata:
+            type: hidden
+        enslug:
+            type: locale_data
+            index: true
+    viewless: true
+    singleton: true
+    default_status: published
+    sort: -id
+    icon_many: "fa:cogs"
+    icon_one: "fa:cog"
+
+pages:
+    name: Pages
+    singular_name: Page
+    fields:
+        locale:
+            type: locale
+            group: inhalt
+        title:
+            label: Titel
+            type: text
+            class: large
+            group: inhalt
+            translatable: true
+        slug:
+            label: Link
+            type: slug
+            uses: title
+            group: inhalt
+        body:
+            label: Text
+            type: html
+            height: 300px
+            group: inhalt
+            translatable: true
+        dedata:
+            type: hidden
+        deslug:
+            type: locale_data
+            index: true
+        endata:
+            type: hidden
+        enslug:
+            type: locale_data
+            index: true
+    record_template: page.twig
+    recordsperpage: 10
+    default_status: published
+    icon_many: "fa:file-text-o"
+    icon_one: "fa:file-text-o"
+
+work:
+    name: Works
+    singular_name: Work
+    fields:
+        locale:
+            type: locale
+            group: inhalt
+        title:
+            label: Titel
+            type: text
+            class: large
+            group: inhalt
+            translatable: true
+        slug:
+            label: Link
+            type: slug
+            uses: title
+        text:
+            label: Beschreibung
+            type: html
+            height: 300px
+            group: inhalt
+            translatable: true
+        gallery:
+            label: Galerie
+            type: repeater
+            group: media
+            initial: 0
+            translatable: true
+            collapsible: true
+            fields:
+                title:
+                    label: Titel
+                    type: text
+                    placeholder: "Titel des Galerieelements"
+                preview:
+                    prefix: "<p class='small'>Vorschau für Bilder, Videos und Dokumente.</p>"
+                    label: Vorschau
+                    type: image
+                    extensions: [ gif, jpg, png ]
+                image:
+                    label: Bild
+                    type: image
+                    extensions: [ gif, jpg, png ]
+                video:
+                    label: Video
+                    type: file
+                    extensions: [ mp4 ]
+                document:
+                    label: Dokument
+                    type: file
+                    extensions: [ pdf ]
+                text:
+                    label: Legende
+                    type: html
+                    height: 100px
+                textblock:
+                    label: Legende als Vorschau
+                    type: checkbox
+                backgroundcolor:
+                    label: Hintergrundfarbe
+                    type: text
+                    class: narrow
+                    variant: inline
+                    placeholder: '#FFFFFF'
+                textcolor:
+                    label: Textfarbe
+                    type: text
+                    class: narrow
+                    variant: inline
+                    placeholder: '#000000'
+            dedata:
+                type: hidden
+            deslug:
+                type: locale_data
+                index: true
+            endata:
+                type: hidden
+            enslug:
+                type: locale_data
+                index: true
+        dedata:
+            type: hidden
+        deslug:
+            type: locale_data
+            index: true
+        endata:
+            type: hidden
+        enslug:
+            type: locale_data
+            index: true
+        template:
+            type: templateselect
+            filter: 'record*.twig'
+            group: template
+    relations:
+        pages:
+            multiple: false
+            label: Wähle eine Seite
+            order: -datepublish
+    default_status: published
+    record_template: record.twig
+    recordsperpage: 10
+    icon_many: "fa:file-text-o"
+    icon_one: "fa:file-text-o"

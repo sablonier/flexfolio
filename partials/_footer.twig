@@ -1,0 +1,17 @@
+
+{% setcontent settings = "settings" limit 1 returnsingle %}
+<footer class="column footer">
+    <div style="margin: 5px;">
+        <div style="border-top: 1px solid black; padding-top: 5px;">
+            <span class="small">© {{ "now"|date("Y") }} {{ settings.footer }}</span>
+        </div>
+    </div>
+</footer>
+    
+    <!-- jQuery first, then Tether, then Bootstrap JS. -->
+    <script src={{ asset('js/jquery-3.1.1.slim.min.js', 'theme') }}></script>
+    <script src={{ asset('js/tether.min.js', 'theme') }}></script>
+    <script src={{ asset('js/bootstrap.min.js', 'theme') }}></script>
+
+  </body>
+</html>
