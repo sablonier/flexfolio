@@ -85,7 +85,8 @@
                         {{ record.text }}
                         {# show other records with same relation #}
                         {# --------------------------------- #}
-                        <h6 style="border-bottom: 1px solid black;"> Weitere Arbeiten:</h6>
+                        <p></p>
+                        <h6 style="border-bottom: 1px solid black;">{{ record.related()[0].title }}</h6>
                         {% setcontent rels = 'work' %}
                         {% for rel in rels %}
                         {% if rel.related == record.related() %}

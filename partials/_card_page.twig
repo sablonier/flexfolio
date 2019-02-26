@@ -1,5 +1,8 @@
 <div class="card" id="{{card.id}}" fixedposition="{{ card.position }}">
     <div class="card-block">
+            {% for element in card.gallery.0 %}
+                {{ dump(element.fieldtype) }}
+            {% endfor %}
                 {# image #}
                 {# ----- #}
                 {# check if there is a preview image in the first gallery entry #}
@@ -21,6 +24,7 @@
                         <a href="{{ card.link }}">
                             <img src="{{ checkimage|thumbnail(rwidth.small, rheight.small, 'r') }}" width="100%" alt="{{ card.gallery[0].text }}"></p>
                         </a>
+                        
                     {% else %}
                         {{ "No image." }}
                     {% endif %}
