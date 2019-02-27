@@ -78,6 +78,7 @@ pages:
         enslug:
             type: locale_data
             index: true
+    taxonomy: [ pagesort ]
     record_template: page.twig
     recordsperpage: 10
     default_status: published
@@ -101,7 +102,7 @@ work:
             label: Link
             type: slug
             uses: title
-        text:
+        description:
             label: Beschreibung
             type: html
             height: 300px
@@ -109,62 +110,69 @@ work:
             translatable: true
         gallery:
             label: Galerie
-            type: repeater
-            group: media
-            initial: 0
+            type: block
+            group: galerie
             translatable: true
             collapsible: true
             fields:
-                title:
-                    label: Titel
-                    type: text
-                    placeholder: "Titel des Galerieelements"
-                preview:
-                    prefix: "<p class='small'>Vorschau für Bilder, Videos und Dokumente.</p>"
+                previewelement:
                     label: Vorschau
-                    type: image
-                    extensions: [ gif, jpg, png ]
-                image:
+                    prefix: "<p class='small'>Diese Vorschau wird auf der Start- und Auswahlseiten angezeigt."
+                    fields:
+                        title:
+                            label: Titel
+                            type: text
+                            default: 'Vorschau'
+                        image:
+                            label: Vorschau Bild
+                            type: image
+                            extensions: [ gif, jpg, png ]
+                        text:
+                            label: Vorschau Text
+                            type: html
+                            height: 150px
+                imageelement:
                     label: Bild
-                    type: image
-                    extensions: [ gif, jpg, png ]
-                video:
+                    fields:
+                        title:
+                            label: Titel
+                            type: text
+                        image:
+                            label: Bild
+                            type: image
+                            extensions: [ gif, jpg, png ]
+                        caption:
+                            label: Legende
+                            type: textarea
+                            height: 50px
+                videoelement:
                     label: Video
-                    type: file
-                    extensions: [ mp4 ]
-                document:
+                    fields:
+                        title:
+                            label: Titel
+                            type: text
+                        video:
+                            label: Video
+                            type: file
+                            extensions: [ mp4 ]
+                        caption:
+                            label: Legende
+                            type: textarea
+                            height: 50px
+                documentelement:
                     label: Dokument
-                    type: file
-                    extensions: [ pdf ]
-                text:
-                    label: Legende
-                    type: html
-                    height: 100px
-                textblock:
-                    label: Legende als Vorschau
-                    type: checkbox
-                backgroundcolor:
-                    label: Hintergrundfarbe
-                    type: text
-                    class: narrow
-                    variant: inline
-                    placeholder: '#FFFFFF'
-                textcolor:
-                    label: Textfarbe
-                    type: text
-                    class: narrow
-                    variant: inline
-                    placeholder: '#000000'
-            dedata:
-                type: hidden
-            deslug:
-                type: locale_data
-                index: true
-            endata:
-                type: hidden
-            enslug:
-                type: locale_data
-                index: true
+                    fields:
+                        title:
+                            label: Titel
+                            type: text
+                        file:
+                            label: Dokument
+                            type: file
+                            extensions: [ pdf ]
+                        caption:
+                            label: Legende
+                            type: textarea
+                            height: 50px
         dedata:
             type: hidden
         deslug:
