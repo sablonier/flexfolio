@@ -1,12 +1,14 @@
+{% set imagesize = { 'small' : 360, 'medium' : 640, 'large' : 1024, 'xlarge' : 1600 } %}
+
 <div class="card" id="{{card.id}}" fixedposition="{{ card.position }}">
     <div class="card-block">
-            {% for element in card.gallery %}
-                {% if element.block == 'previewelement' %}
-                    {% set resimage = { 'checkimage' : element.image.file } %}
-                    {% if resimage.checkimage != "" %}
+            {% for item in card.gallery %}
+                {% if item.block == 'previewelement' %}
+                    {% set resimage = { 'file' : item.image.file, 'size' : imagesize.small } %}
+                    {% if resimage.file != "" %}
                         {% include 'partials/_card_resimage.twig' with resimage %}
                     {% endif %}
-                    {{ element.text }}
+                    {{ item.text }}
                 {% endif %}
             {% endfor %}
         <div class="card-text small">

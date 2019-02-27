@@ -1,8 +1,0 @@
-{% set info = {     'height': imageinfo(resimage.checkimage).height, 
-                    'width': imageinfo(resimage.checkimage).width} %}
-                    {{dump(info)}}
-
-                                
-<a href="{{ card.link }}">
-   <img src="{{ resimage.checkimage|thumbnail(rwidth.small, rheight.small, 'r') }}" width="100%"></p>
-</a>

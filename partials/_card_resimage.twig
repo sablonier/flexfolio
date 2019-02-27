@@ -1,12 +1,8 @@
-
-{% set info = {     'height': imageinfo(resimage.checkimage).height, 
-                    'width': imageinfo(resimage.checkimage).width} %}
-{% set rwidth = {   'small': '480', 'medium': '640', 'large': '1024', 'xlarge': '1400'} %}
-{% set rheight = {  'small': info.height*rwidth.small/info.width, 
-                    'medium': info.height*rwidth.medium/info.width, 
-                    'large': info.height*rwidth.large/info.width, 
-                    'xlarge': info.height*rwidth.xlarge/info.width } %}
+{% set info = {     'height': imageinfo(resimage.file).height, 
+                    'width': imageinfo(resimage.file).width} %}
+{% set rwidth = resimage.size %}
+{% set rheight = info.height*rwidth/info.width %}
                                 
 <a href="{{ card.link }}">
-   <img src="{{ resimage.checkimage|thumbnail(rwidth.small, rheight.small, 'r') }}" width="100%"></p>
+   <img src="{{ resimage.file|thumbnail(rwidth, rheight, 'r') }}" width="100%"></p>
 </a>
