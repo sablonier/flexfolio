@@ -1,3 +1,4 @@
+{% set imagesize = { 'small' : 768, 'medium' : 1024, 'large' : 1280, 'xlarge' : 1920 } %}
 {% include 'partials/_header.twig' %}
 
 <body>
@@ -17,59 +18,51 @@
                         {# ----- #}
                         {% if record.gallery != "" %}
                         <div id="carouselExampleControls" data-wrap="true" data-interval="false" class="carousel slide" data-ride="carousel">
-                            
-                            
                             {% for item in record.gallery %}
                                 {% if item.image.file != "" %}
                                 <div class="carousel-item {% if loop.first %}active{% endif %}">
                                     {% set resimage = { 'file' : item.image.file, 'size' : imagesize.large } %}
-                                        <div class="card">
-                                            {% if resimage.file != "" %}
-                                                {% include 'partials/_card_resimage.twig' with resimage %}
-                                            {% endif %}
-                                    <div class="card-text small">
-                                        {{ item.caption }}
-                                    </div>
+                                    <div class="card">
+                                        {% if resimage.file != "" %}
+                                            {% include 'partials/_card_resimage.twig' with resimage %}
+                                        {% endif %}
+                                        <div class="card-text small">
+                                            {{ item.caption }}
+                                        </div>
                                     </div>
                                 </div>
                                 {% elseif item.video != ""%}
                                 <div class="carousel-item {% if loop.first %}active{% endif %}">
-                                        <div class="card">
-                                                <video width="100%" controls src="/files/{{ item.video }}">
-                                                    Sorry, your browser doesn't support embedded videos, you can <a href="{{ item.video }}">download it</a>
-                                                    and watch it with your favorite video player.
-                                                </video>
-                                                <div class="card-text small">
-                                                    {{ item.get('caption') }}
-                                                </div>
-                                            </div>
+                                    <div class="card">
+                                        <video width="100%" controls src="/files/{{ item.video }}">
+                                            Sorry, your browser doesn't support embedded videos, you can <a href="{{ item.video }}">download it</a>
+                                            and watch it with your favorite video player.
+                                        </video>
+                                        <div class="card-text small">
+                                            {{ item.caption }}
+                                        </div>
+                                    </div>
                                 </div>
-                                {% elseif item.document != ""%}
+                                {% elseif item.file != ""%}
                                     <div class="carousel-item {% if loop.first %}active{% endif %}">
-                                        <a href="/files/{{ item.document }}">
+                                        
                                         {% if item.preview.file != "" %}
                                             {% set checkimage = item.preview.file %}
-                                        
-                                        <div class="card" >
-                                        {% set oimage = {   'height': imageinfo(checkimage).height, 
-                                                            'width': imageinfo(checkimage).width } %}
-                                        {% set rwidth = {   'small': '480', 'medium': '640', 'large': '1024', 'xlarge': '1400'} %}
-                                        {% set rheight = {  'small': oimage.height*rwidth.small/oimage.width, 
-                                                            'medium': oimage.height*rwidth.medium/oimage.width, 
-                                                            'large': oimage.height*rwidth.large/oimage.width, 
-                                                            'xlarge': oimage.height*rwidth.xlarge/oimage.width } %}
-                                        <img src="{{ checkimage|thumbnail(rwidth.large, rheight.large, 'r') }}" width="100%" alt="{{ item.text }}">
+                                            <div class="card" >
+                                            {% if resimage.file != "" %}
+                                                {% include 'partials/_card_resimage.twig' with resimage %}
+                                            {% endif %}
                                         {% else %}
-                                        <div class="card" >
-                                        <img src="/theme/flexfolio/images/missing_preview.png" width="100%" alt="{{ item.text }}">
+                                            <div class="card" >
+                                            <img src="/theme/flexfolio/images/missing_preview.png" width="100%" alt="{{ item.text }}">
                                         {% endif %}
-        
+                                        <a href="/files/{{ item.file }}">
                                         <div class="carousel-item-overlay">
                                             <span class="icon-down-circled">&nbsp;{{ "Download"}}</span>
                                         </div>
                                         </a>
                                         <div class="card-text small">
-                                        {{ item.text }}
+                                        {{ item.caption }}
                                         </div>
                                     </div>
                                 </div>

@@ -1,13 +1,13 @@
 {% set imagesize = { 'small' : 768, 'medium' : 1024, 'large' : 1280, 'xlarge' : 1920 } %}
 <div class="card" id="{{card.id}}" fixedposition="{{ card.position }}">
     <div class="card-block">
-        {% set resimage = { 'file' : card.preview, 'size' : imagesize.small } %}
+        {% set resimage = { 'file' : card.previewimage.file, 'size' : imagesize.small } %}
         {% if resimage.file != "" %}
-            {% include 'partials/_card_resimage.twig' with resimage %}
+        {% include 'partials/_card_resimage.twig' with resimage %}
         {% endif %}
+        {{ card.previewtext }}
         <div class="card-text small">
             <a href="{{ card.link }}">{{ card.title }}</a>
         </div>
     </div>
 </div>
-    

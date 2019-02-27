@@ -25,7 +25,7 @@
                                             {% include 'partials/_card_resimage.twig' with resimage %}
                                         {% endif %}
                                         <div class="card-text small">
-                                            {{ item.get('caption') }}
+                                            {{ item.caption }}
                                         </div>
                                     </div>
                                 {% elseif item.video != ""%}
@@ -35,29 +35,28 @@
                                         and watch it with your favorite video player.
                                     </video>
                                     <div class="card-text small">
-                                        {{ item.get('caption') }}
+                                        {{ item.caption }}
                                     </div>
                                 </div>
                                 {% elseif item.file != "" %}
-                                        
-                                        {% if item.preview != "" %}
-                                            {% set resimage = { 'file' : item.preview.file, 'size' : imagesize.large } %}
-                                            <div class="card" >
-                                            {% if resimage.file != "" %}
-                                                {% include 'partials/_card_resimage_without_link.twig' with resimage %}
-                                            {% endif %}
-                                        {% else %}
-                                            <div class="card" >
-                                            <img src="/theme/flexfolio/images/missing_preview.png" width="100%" alt="{{ item.text }}">
+                                    {% if item.preview != "" %}
+                                        {% set resimage = { 'file' : item.preview.file, 'size' : imagesize.large } %}
+                                        <div class="card" >
+                                        {% if resimage.file != "" %}
+                                            {% include 'partials/_card_resimage_without_link.twig' with resimage %}
                                         {% endif %}
-                                        <a href="/files/{{ item.file }}">
-                                            <div class="carousel-item-overlay">
-                                                <span class="icon-down-circled">&nbsp;{{ "Download"}}</span>
-                                            </div>
-                                        </a>
-                                        <div class="card-text small">
-                                        {{ item.caption }}
+                                    {% else %}
+                                        <div class="card" >
+                                        <img src="/theme/flexfolio/images/missing_preview.png" width="100%" alt="{{ item.text }}">
+                                    {% endif %}
+                                    <a href="/files/{{ item.file }}">
+                                        <div class="carousel-item-overlay">
+                                            <span class="icon-down-circled">&nbsp;{{ "Download"}}</span>
                                         </div>
+                                    </a>
+                                    <div class="card-text small">
+                                        {{ item.caption }}
+                                    </div>
                                     </div>
                                 {% endif %}
                             {% endfor %}
