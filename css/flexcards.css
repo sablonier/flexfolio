@@ -2,14 +2,14 @@
 @font-face {
     font-family: 'rubik-bolditalic';
     src: url('../fonts/fonts/Rubik-BoldItalic.woff');
-    font-weight: normal;
-    font-style: normal;
+    font-weight: bold;
+    font-style: italic;
 }
 
 @font-face {
     font-family: 'rubik-bold';
     src: url('../fonts/fonts/Rubik-Bold.woff');
-    font-weight: normal;
+    font-weight: bold;
     font-style: normal;
 }
 
@@ -24,7 +24,7 @@
     font-family: 'rubik-italic';
     src: url('../fonts/fonts/Rubik-Italic.woff');
     font-weight: normal;
-    font-style: normal;
+    font-style: italic;
 }
 
 /* Main bootstrap override and flexcard css */
@@ -32,6 +32,7 @@
 body {
   font-family: 'rubik-regular', sans-serif;
   font-weight: normal;
+  line-height: 1.25rem;
   background-color: #ddd;
   padding-top: 80px;
   background: #fff;
@@ -65,6 +66,11 @@ a {
 
 a:focus, a:hover {
   color: #000;
+}
+
+p {
+  margin-bottom: 0;
+  margin-bottom: 0.5rem;
 }
 
 p a {
