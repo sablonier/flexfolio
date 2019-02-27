@@ -1,0 +1,6 @@
+{% set info = {     'height': imageinfo(resimage.file).height, 
+                    'width': imageinfo(resimage.file).width} %}
+{% set rwidth = resimage.size %}
+{% set rheight = info.height*rwidth/info.width %}
+                                
+<img src="{{ resimage.file|thumbnail(rwidth, rheight, 'r') }}" width="100%">
