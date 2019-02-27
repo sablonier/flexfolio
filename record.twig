@@ -18,7 +18,7 @@
                         {# ----- #}
                         {% if record.gallery != "" %}
                             {% for item in record.gallery %}
-                                {% if item.image.file != "" and item.block != "previewelement" %}
+                                {% if item.image.file != "" %}
                                     {% set resimage = { 'file' : item.image.file, 'size' : imagesize.large } %}
                                     <div class="card">
                                         {% if resimage.file != "" %}
@@ -38,26 +38,25 @@
                                         {{ item.get('caption') }}
                                     </div>
                                 </div>
-                                {% elseif item.document != ""%}
-                                        <a href="/files/{{ item.document }}">
-                                        {% if item.preview.file != "" %}
-                                        {% set resimage = { 'file' : item.image.file, 'size' : imagesize.large } %}
+                                {% elseif item.file != "" %}
                                         
-                                        <div class="card" >
+                                        {% if item.preview != "" %}
+                                            {% set resimage = { 'file' : item.preview.file, 'size' : imagesize.large } %}
+                                            <div class="card" >
                                             {% if resimage.file != "" %}
-                                                {% include 'partials/_card_resimage.twig' with resimage %}
+                                                {% include 'partials/_card_resimage_without_link.twig' with resimage %}
                                             {% endif %}
                                         {% else %}
-                                        <div class="card" >
-                                        <img src="/theme/flexfolio/images/missing_preview.png" width="100%" alt="{{ item.text }}">
+                                            <div class="card" >
+                                            <img src="/theme/flexfolio/images/missing_preview.png" width="100%" alt="{{ item.text }}">
                                         {% endif %}
-        
-                                        <div class="carousel-item-overlay">
-                                            <span class="icon-down-circled">&nbsp;{{ "Download"}}</span>
-                                        </div>
+                                        <a href="/files/{{ item.file }}">
+                                            <div class="carousel-item-overlay">
+                                                <span class="icon-down-circled">&nbsp;{{ "Download"}}</span>
+                                            </div>
                                         </a>
                                         <div class="card-text small">
-                                        {{ item.text }}
+                                        {{ item.caption }}
                                         </div>
                                     </div>
                                 {% endif %}
