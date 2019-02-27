@@ -13,6 +13,9 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="{{ asset('css/bootstrap.css', 'theme') }}">
+    <!-- Fonts CSS -->
+    {% setcontent settings = 'settings' limit 1 returnsingle %}
+    <link rel="stylesheet" href="{{ asset('fonts/font-'~settings.font~'.css', 'theme') }}">
     <!-- Flexcards CSS -->
     <link rel="stylesheet" href="{{ asset('css/flexcards.css', 'theme') }}">
   </head>

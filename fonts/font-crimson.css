@@ -1,0 +1,28 @@
+/* Import font files */
+@font-face {
+    font-family: 'font-bolditalic';
+    src: url('fonts/crimson-bolditalic-webfont.woff');
+    font-weight: bold;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'font-bold';
+    src: url('fonts/crimson-bold-webfont.woff');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'font-regular';
+    src: url('fonts/crimson-roman-webfont.woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'font-italic';
+    src: url('fonts/crimson-italic-webfont.woff');
+    font-weight: normal;
+    font-style: italic;
+}

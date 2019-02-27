@@ -1,36 +1,9 @@
-/* Import font files */
-@font-face {
-    font-family: 'rubik-bolditalic';
-    src: url('../fonts/fonts/Rubik-BoldItalic.woff');
-    font-weight: bold;
-    font-style: italic;
-}
 
-@font-face {
-    font-family: 'rubik-bold';
-    src: url('../fonts/fonts/Rubik-Bold.woff');
-    font-weight: bold;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'rubik-regular';
-    src: url('../fonts/fonts/Rubik-Regular.woff');
-    font-weight: normal;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'rubik-italic';
-    src: url('../fonts/fonts/Rubik-Italic.woff');
-    font-weight: normal;
-    font-style: italic;
-}
 
 /* Main bootstrap override and flexcard css */
 
 body {
-  font-family: 'rubik-regular', sans-serif;
+  font-family: 'font-regular', sans-serif;
   font-weight: normal;
   line-height: 1.25rem;
   background-color: #ddd;
@@ -55,7 +28,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 b, strong {
-  font-family: 'rubik-bold', sans-serif;
+  font-family: 'font-bold', sans-serif;
   font-weight: normal;
 }
 

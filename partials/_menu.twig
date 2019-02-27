@@ -3,7 +3,7 @@
 {# Generates all menu entries from available pages #}
 {% setcontent pages = 'pages' %}
 {% for item in pages %}
-    <li class="nav-item {% if item.link|current and item.link != '/' %}active{% endif %}">
+    <li class="nav-item {% if page.link == item.link and item.link != '/' %}active{% endif %}">
         <a class="nav-link" href="{{ item.link }}">{{ item.title }}</a>
     </li>
 {% endfor %}
