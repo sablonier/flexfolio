@@ -19,7 +19,7 @@
                         {% if record.gallery != "" %}
                             {% for item in record.gallery %}
                                 {% if item.image.file != "" %}
-                                    {% set resimage = { 'file' : item.image.file, 'size' : imagesize.large } %}
+                                    {% set resimage = { 'file' : item.image.file, 'size' : imagesize.large, 'link' : false } %}
                                     <div class="card">
                                         {% if resimage.file != "" %}
                                             {% include 'partials/_card_resimage.twig' with resimage %}
@@ -40,10 +40,10 @@
                                 </div>
                                 {% elseif item.file != "" %}
                                     {% if item.preview != "" %}
-                                        {% set resimage = { 'file' : item.preview.file, 'size' : imagesize.large } %}
+                                        {% set resimage = { 'file' : item.preview.file, 'size' : imagesize.large, 'link' : false } %}
                                         <div class="card" >
                                         {% if resimage.file != "" %}
-                                            {% include 'partials/_card_resimage_without_link.twig' with resimage %}
+                                            {% include 'partials/_card_resimage.twig' with resimage %}
                                         {% endif %}
                                     {% else %}
                                         <div class="card" >

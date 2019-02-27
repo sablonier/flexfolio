@@ -2,7 +2,11 @@
                     'width': imageinfo(resimage.file).width} %}
 {% set rwidth = resimage.size %}
 {% set rheight = info.height*rwidth/info.width %}
-                                
+
+{% if resimage.link %}
 <a href="{{ card.link }}">
-   <img src="{{ resimage.file|thumbnail(rwidth, rheight, 'r') }}" width="100%"></p>
+   <img src="{{ resimage.file|thumbnail(rwidth, rheight, 'r') }}" width="100%">
 </a>
+{% else %}
+<img src="{{ resimage.file|thumbnail(rwidth, rheight, 'r') }}" width="100%">
+{% endif %}
