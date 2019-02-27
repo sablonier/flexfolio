@@ -342,7 +342,7 @@ label {
 /* Bootstrap card override */
 
 .card {
-  position: relative;
+  position: rdrelative;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -372,7 +372,17 @@ label {
           flex: 1 1 auto;
   padding: 0;
   background-color: #fff;
-  
+}
+
+.card-block ul {
+  list-style-type: none;
+  padding-left: 1rem;
+  text-indent: -1rem;
+}
+
+.card-block li:before {
+  color: red;
+  content: "\2014\a0"
 }
 
 @media (max-width: 576px) {
