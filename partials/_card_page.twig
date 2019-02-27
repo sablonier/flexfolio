@@ -2,17 +2,12 @@
 
 <div class="card" id="{{card.id}}" fixedposition="{{ card.position }}">
     <div class="card-block">
-            {% for item in card.gallery %}
-                {% if item.block == 'previewelement' %}
-                    {% set resimage = { 'file' : item.image.file, 'size' : imagesize.small } %}
-                    {% if resimage.file != "" %}
-                        {% include 'partials/_card_resimage.twig' with resimage %}
-                    {% endif %}
-                    {{ item.text }}
-                {% endif %}
-            {% endfor %}
+        {% set resimage = { 'file' : card.preview, 'size' : imagesize.small } %}
+        {% if resimage.file != "" %}
+            {% include 'partials/_card_resimage.twig' with resimage %}
+        {% endif %}
         <div class="card-text small">
-                <a href="{{ card.link }}">{{ card.title }}</a>
+            <a href="{{ card.link }}">{{ card.title }}</a>
         </div>
     </div>
 </div>

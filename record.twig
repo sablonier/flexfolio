@@ -25,7 +25,7 @@
                                             {% include 'partials/_card_resimage.twig' with resimage %}
                                         {% endif %}
                                         <div class="card-text small">
-                                            {{ item.text }}
+                                            {{ item.get('caption') }}
                                         </div>
                                     </div>
                                 {% elseif item.video != ""%}
@@ -35,23 +35,18 @@
                                         and watch it with your favorite video player.
                                     </video>
                                     <div class="card-text small">
-                                        {{ item.text }}
+                                        {{ item.get('caption') }}
                                     </div>
                                 </div>
                                 {% elseif item.document != ""%}
                                         <a href="/files/{{ item.document }}">
                                         {% if item.preview.file != "" %}
-                                            {% set checkimage = item.preview.file %}
+                                        {% set resimage = { 'file' : item.image.file, 'size' : imagesize.large } %}
                                         
                                         <div class="card" >
-                                        {% set oimage = {   'height': imageinfo(checkimage).height, 
-                                                            'width': imageinfo(checkimage).width } %}
-                                        {% set rwidth = {   'small': '480', 'medium': '640', 'large': '1024', 'xlarge': '1400'} %}
-                                        {% set rheight = {  'small': oimage.height*rwidth.small/oimage.width, 
-                                                            'medium': oimage.height*rwidth.medium/oimage.width, 
-                                                            'large': oimage.height*rwidth.large/oimage.width, 
-                                                            'xlarge': oimage.height*rwidth.xlarge/oimage.width } %}
-                                        <img src="{{ checkimage|thumbnail(rwidth.large, rheight.large, 'r') }}" width="100%" alt="{{ item.text }}">
+                                            {% if resimage.file != "" %}
+                                                {% include 'partials/_card_resimage.twig' with resimage %}
+                                            {% endif %}
                                         {% else %}
                                         <div class="card" >
                                         <img src="/theme/flexfolio/images/missing_preview.png" width="100%" alt="{{ item.text }}">

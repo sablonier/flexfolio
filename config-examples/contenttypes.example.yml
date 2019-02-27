@@ -108,29 +108,18 @@ work:
             height: 300px
             group: inhalt
             translatable: true
+        preview:
+            label: Vorschau
+            type: image
+            extensions: [ gif, jpg, png ]
+            translatable: true
         gallery:
             label: Galerie
             type: block
             group: galerie
-            translatable: true
             collapsible: true
+            translatable: true
             fields:
-                previewelement:
-                    label: Vorschau
-                    prefix: "<p class='small'>Diese Vorschau wird auf der Start- und Auswahlseiten angezeigt."
-                    fields:
-                        title:
-                            label: Titel
-                            type: text
-                            default: 'Vorschau'
-                        image:
-                            label: Vorschau Bild
-                            type: image
-                            extensions: [ gif, jpg, png ]
-                        text:
-                            label: Vorschau Text
-                            type: html
-                            height: 150px
                 imageelement:
                     label: Bild
                     fields:
@@ -165,10 +154,14 @@ work:
                         title:
                             label: Titel
                             type: text
+                        preview:
+                            label: Bild
+                            type: image
+                            extensions: [ gif, jpg, png ]
                         file:
                             label: Dokument
                             type: file
-                            extensions: [ pdf ]
+                            extensions: [ pdf, zip ]
                         caption:
                             label: Legende
                             type: textarea
