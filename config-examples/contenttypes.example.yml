@@ -108,11 +108,17 @@ work:
             height: 300px
             group: inhalt
             translatable: true
-        preview:
-            label: Vorschau
+        previewimage:
+            label: Vorschau Bild
             type: image
             extensions: [ gif, jpg, png ]
             translatable: true
+            group: vorschau
+        previewtext:
+            label: Vorschau Text
+            type: html
+            translatable: true
+            group: vorschau
         gallery:
             label: Galerie
             type: block
