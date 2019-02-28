@@ -1,4 +1,4 @@
-                                                                <!DOCTYPE html>
+                                        <!DOCTYPE html>
 <html lang="en">
     <head>
         <meta charset="utf-8">
@@ -49,16 +49,6 @@
                                         Installation
                                     </a>
                                 </li>
-                                                                                                                            <li class="">
-                                    <a href="https://sablonier.github.io/flexfolio/configuration.html" class="">
-                                        Configuration
-                                    </a>
-                                </li>
-                                                                                                                            <li class="">
-                                    <a href="https://sablonier.github.io/flexfolio/about-license.html" class="">
-                                        About and License
-                                    </a>
-                                </li>
                                                     </ul>
                     </nav>
                 </div>
@@ -100,43 +90,33 @@
                 <div class="docs__main--body">
                     <section id="content" class="content">
                         <h3 id="quick-install-via-sftp">Quick install via (S)FTP</h3>
-<dl>
-<dt>Bolt CMS is a lightweight and simple Content Management System. You don't need to install any databases and extensions. With this quick install you just copy the preconfigured content of flexfolio-bolt to your webserver and let do Bolt CMS the rest.</dt>
-<dd><p>nut_and_bolt:1 <strong>Download</strong> preconfigured Flexfolio-Bolt-CMS from</p></dd>
-<dt><code>https://download.all-mine.org/downloads/flexfolio-bolt-3.6.5.zip</code></dt>
-<dd><p>nut_and_bolt:2 <strong>Extract</strong> the .zip-File</p></dd>
-<dd><p>nut_and_bolt:3 Get the (S)FTP-Crendentials of your hosting and <strong>copy all the content of the folder you got to your webroot</strong> via your favourite FTP-Programm (i.e. <a href="https://cyberduck.io/">Cyberduck</a> )</p></dd>
-<dd><p>nut_and_bolt:4 <strong>Point your webbrowser to your webserver</strong> (i.e. <a href="https://www.myname.com/admin">https://www.myname.com/admin</a>) and start with creating the first user.</p></dd>
-</dl>
+<p>Bolt CMS is a lightweight and simple Content Management System. You don't need to install any databases and extensions with this quick install. You just need to copy the pre-configured content of flexfolio-bolt-folder to your webserver root (or folder) and let Bolt CMS and flexfolio theme andconfiguration do the rest.</p>
+<p><strong>Step 1:</strong> <strong>Download</strong> pre-configured Flexfolio-Bolt-CMS from</p>
+<p><code>https://download.all-mine.org/downloads/flexfolio-bolt-3.6.5.zip</code></p>
+<p><strong>Step 2:</strong> <strong>Extract</strong> the .zip-File</p>
+<p><strong>Step 3:</strong> Get the (S)FTP-Crendentials of your hosting and <strong>copy all the content of the folder to your webroot</strong> via your favourite FTP-Programm (i.e. <a href="https://cyberduck.io/">Cyberduck</a> )</p>
+<p><strong>Step 4:</strong> <strong>Point your webbrowser to your webserver</strong> (i.e. <a href="https://www.myname.com/admin">https://www.myname.com/admin</a>) and start with creating the first user.</p>
 <h3 id="install-via-shell-with-own-bolt-cms-install">Install via shell with own Bolt CMS install</h3>
 <p><em>For this installation you will need <strong>shell access (ssh)</strong> to your webserver.</em> All Mine Flexfolio comes with it's own theme and configurations files for Bolt CMS. You can install your own Bolt CMS via shell and with a few steps more you  are with flexfolio theme and all needed extensions.</p>
 <h4 id="bolt-cms-install">Bolt CMS install</h4>
-<p>:nut_and_bolt:1 Login to your server and change to your <strong>webroot directory</strong> (<code>htdocs</code>, <code>www</code> or <code>whateverwebroot</code>), i.e.</p>
-<dl>
-<dt><code>cd htdocs/</code></dt>
-<dd><p>nut_and_bolt:2 Get latest Bolt CMS distribution for <strong>flat structure</strong> install:</p></dd>
-<dt><code>curl -O https://bolt.cm/distribution/bolt-latest-flat-structure.tar.gz</code></dt>
-<dd><p>nut_and_bolt:3 <strong>Decompress</strong> the file and get all files</p></dd>
-</dl>
-<p>These step takes some seconds, be patient after sending this line.</p>
-<dl>
-<dt><code>tar -xzf bolt-latest-flat-structure.tar.gz --strip-components=1</code></dt>
-<dd><p>nut_and_bolt:4 <strong>Init Bolt CMS</strong> with following</p></dd>
-</dl>
+<p><strong>Step 1:</strong> Login to your server and change to your <strong>webroot directory</strong> (<code>htdocs</code>, <code>www</code> or <code>whateverwebroot</code>), i.e.</p>
+<p><code>cd htdocs/</code></p>
+<p><strong>Step 2:</strong> Get latest Bolt CMS distribution for <strong>flat structure</strong> install:</p>
+<p><code>curl -O https://bolt.cm/distribution/bolt-latest-flat-structure.tar.gz</code></p>
+<p><strong>Step 3:</strong> <strong>Decompress</strong> the file and get all files</p>
+<p>These step will take some time, be patient after executing this command.</p>
+<p><code>tar -xzf bolt-latest-flat-structure.tar.gz --strip-components=1</code></p>
+<p><strong>Step 4:</strong> <strong>Init Bolt CMS</strong> with following</p>
 <p><code>php app/nut init</code></p>
-<dl>
-<dt>You could get some warnings but at the end you should get a greeting with Bolt CMS version <em>Welcome to Bolt! - version 3.x.x</em></dt>
-<dd><p>nut_and_bolt:5 If everything goes well <strong>remove</strong> the compressed tar.gz-File</p></dd>
-</dl>
+<p>You could get some warnings but at the end you should get a greeting with Bolt CMS version <em>Welcome to Bolt! - version 3.x.x</em></p>
+<p><strong>Step 5:</strong> If everything goes well <strong>remove</strong> the compressed tar.gz-File</p>
 <p><code>rm bolt-latest-flat-structure.tar.gz</code></p>
 <h4 id="flexfolio-theme-install">Flexfolio theme install</h4>
-<p>:nut_and_bolt:1 cd to theme directory in your new bolt installation</p>
-<dl>
-<dt><code>cd theme/</code></dt>
-<dd><p>nut_and_bolt:2 To <strong>get the latest flexfolio theme</strong> clone the repository with git</p></dd>
-<dt><code>git clone git://github.com/sablonier/flexfolio.git</code></dt>
-<dd><p>nut_and_bolt:3 <strong> Copy the example configurations</strong> to your Bolt CMS app directory with</p></dd>
-</dl>
+<p><strong>Step 1:</strong> cd to theme directory in your new bolt installation</p>
+<p><code>cd theme/</code></p>
+<p><strong>Step 2:</strong> To <strong>get the latest flexfolio theme</strong> clone the repository with git</p>
+<p><code>git clone git://github.com/sablonier/flexfolio.git</code></p>
+<p><strong>Step 3:</strong> <strong> Copy the example configurations</strong> to your Bolt CMS app directory with</p>
 <p><code>cp flexfolio/config-examples/config.example.yml ../app/config/config.yml</code>
 <code>cp flexfolio/config-examples/contenttypes.example.yml ../app/config/contenttypes.yml</code>
 <code>cp flexfolio/config-examples/taxonomy.example.yml ../app/config/taxonomy.yml</code>
@@ -146,14 +126,12 @@
 <p><code>https://www.myname.com/admin</code></p>
 <p>Please note that with All Mine Bolt CMS the address of the admin panel is <strong>/admin</strong> and NOT /bolt.</p>
 <h4 id="install-translation-extension-bolttranslate">Install translation extension bolt/translate</h4>
-<p>:nut_and_bolt:1 On the dashboard click on &quot;Extensions&quot;. In the field &quot;Install a new Extension type:</p>
+<p><strong>Step 1:</strong> On the dashboard click on &quot;Extensions&quot;. In the field &quot;Install a new Extension type</p>
 <p><code>translate</code></p>
-<dl>
-<dt>and browse versions of this extension. <strong>Install the latest stable version</strong> of the extension &quot;animal/translate&quot;. In case you see a warning after installing the extension choose &quot;-&gt;Configuration/Check Database&quot; and <strong>update the database</strong>.</dt>
-<dd><p>nut_and_bolt:2 Go back to your shell and copy the example extension configuration file with</p></dd>
-</dl>
+<p>and browse versions of this extension. <strong>Install the latest stable version</strong> of the extension &quot;animal/translate&quot;. In case you see a warning after installing the extension choose &quot;-&gt;Configuration/Check Database&quot; and <strong>update the database</strong>.</p>
+<p><strong>Step 2:</strong> Go back to your shell and copy the example extension configuration file with</p>
 <p><code>cp flexfolio/config-examples/extensions/translate.animal.example.yml ../app/config/extensions/translate.animal.yml</code></p>
-<p>Point your your browser to your webaddress, without /admin and you should see your site. Start to publish your content!</p>
+<p>Point your your browser to your webaddress, without /admin and you should see your site. Start to publish your content.</p>
                     </section>
                 </div>
             </main>
@@ -162,7 +140,7 @@
         <script src="//ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
         <script>
-        var tipuesearch_pages = ["https://sablonier.github.io/flexfolio/installation.html", "https://sablonier.github.io/flexfolio/configuration.html", "https://sablonier.github.io/flexfolio/about-license.html"];
+        var tipuesearch_pages = ["https://sablonier.github.io/flexfolio/installation.html"];
         </script>
         <script src="https://sablonier.github.io/flexfolio/tipuesearch/tipuesearch_set.js"></script>
         <script src="https://sablonier.github.io/flexfolio/tipuesearch/tipuesearch.min.js"></script>
