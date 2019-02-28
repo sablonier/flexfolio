@@ -100,70 +100,60 @@
                 <div class="docs__main--body">
                     <section id="content" class="content">
                         <h3 id="quick-install-via-sftp">Quick install via (S)FTP</h3>
-<p>Bolt CMS is a lightweight and simple Content Management System. You don't need to install any databases and extensions. With this quick install you just copy the preconfigured content of flexfolio-bolt to your webserver and let do Bolt CMS the rest.</p>
-<p>==Step 1== <strong>Download</strong> preconfigured Flexfolio-Bolt-CMS from</p>
-<blockquote>
-<p><code>https://download.all-mine.org/downloads/flexfolio-bolt-3.6.5.zip</code></p>
-</blockquote>
-<p>==Step 2== <strong>Extract</strong> the .zip-File</p>
-<p>==Step 3== Get the (S)FTP-Crendentials of your hosting and <strong>copy all the content of the folder you got to your webroot</strong> via your favourite FTP-Programm (i.e. <a href="https://cyberduck.io/">Cyberduck</a> )</p>
-<p>==Step 4== <strong>Point your webbrowser to your webserver</strong> (i.e. <a href="https://www.myname.com/admin">https://www.myname.com/admin</a>) and start with creating the first user.</p>
+<dl>
+<dt>Bolt CMS is a lightweight and simple Content Management System. You don't need to install any databases and extensions. With this quick install you just copy the preconfigured content of flexfolio-bolt to your webserver and let do Bolt CMS the rest.</dt>
+<dd><p>nut_and_bolt:1 <strong>Download</strong> preconfigured Flexfolio-Bolt-CMS from</p></dd>
+<dt><code>https://download.all-mine.org/downloads/flexfolio-bolt-3.6.5.zip</code></dt>
+<dd><p>nut_and_bolt:2 <strong>Extract</strong> the .zip-File</p></dd>
+<dd><p>nut_and_bolt:3 Get the (S)FTP-Crendentials of your hosting and <strong>copy all the content of the folder you got to your webroot</strong> via your favourite FTP-Programm (i.e. <a href="https://cyberduck.io/">Cyberduck</a> )</p></dd>
+<dd><p>nut_and_bolt:4 <strong>Point your webbrowser to your webserver</strong> (i.e. <a href="https://www.myname.com/admin">https://www.myname.com/admin</a>) and start with creating the first user.</p></dd>
+</dl>
 <h3 id="install-via-shell-with-own-bolt-cms-install">Install via shell with own Bolt CMS install</h3>
 <p><em>For this installation you will need <strong>shell access (ssh)</strong> to your webserver.</em> All Mine Flexfolio comes with it's own theme and configurations files for Bolt CMS. You can install your own Bolt CMS via shell and with a few steps more you  are with flexfolio theme and all needed extensions.</p>
 <h4 id="bolt-cms-install">Bolt CMS install</h4>
-<p>==Step 1== Login to your server and change to your <strong>webroot directory</strong> (<code>htdocs</code>, <code>www</code> or &quot;whateverwebroot&quot;)</p>
-<blockquote>
-<p><code>cd htdocs/</code></p>
-</blockquote>
-<p>==Step 2== Get latest Bolt CMS distribution for <strong>flat structure</strong> install:</p>
-<blockquote>
-<p><code>curl -O https://bolt.cm/distribution/bolt-latest-flat-structure.tar.gz</code></p>
-</blockquote>
-<p>==Step 3== <strong>Decompress</strong> the file and get all files</p>
+<p>:nut_and_bolt:1 Login to your server and change to your <strong>webroot directory</strong> (<code>htdocs</code>, <code>www</code> or <code>whateverwebroot</code>), i.e.</p>
+<dl>
+<dt><code>cd htdocs/</code></dt>
+<dd><p>nut_and_bolt:2 Get latest Bolt CMS distribution for <strong>flat structure</strong> install:</p></dd>
+<dt><code>curl -O https://bolt.cm/distribution/bolt-latest-flat-structure.tar.gz</code></dt>
+<dd><p>nut_and_bolt:3 <strong>Decompress</strong> the file and get all files</p></dd>
+</dl>
 <p>These step takes some seconds, be patient after sending this line.</p>
-<blockquote>
-<p><code>tar -xzf bolt-latest-flat-structure.tar.gz --strip-components=1</code></p>
-</blockquote>
-<p>==Step 4== <strong>Init Bolt CMS</strong> with following</p>
-<blockquote>
+<dl>
+<dt><code>tar -xzf bolt-latest-flat-structure.tar.gz --strip-components=1</code></dt>
+<dd><p>nut_and_bolt:4 <strong>Init Bolt CMS</strong> with following</p></dd>
+</dl>
 <p><code>php app/nut init</code></p>
-</blockquote>
-<p>You could get some warnings but at the end you should get a greeting with Bolt CMS version <em>Welcome to Bolt! - version 3.x.x</em></p>
-<p>==Step 5== If everything goes well <strong>remove</strong> the compressed tar.gz-File</p>
-<blockquote>
+<dl>
+<dt>You could get some warnings but at the end you should get a greeting with Bolt CMS version <em>Welcome to Bolt! - version 3.x.x</em></dt>
+<dd><p>nut_and_bolt:5 If everything goes well <strong>remove</strong> the compressed tar.gz-File</p></dd>
+</dl>
 <p><code>rm bolt-latest-flat-structure.tar.gz</code></p>
-</blockquote>
 <h4 id="flexfolio-theme-install">Flexfolio theme install</h4>
-<p>==Step 1== cd to theme directory in your new bolt installation</p>
-<p><code>cd theme/</code></p>
-<p>==Step 2== To <strong>get the latest flexfolio theme</strong> clone the repository with git</p>
-<blockquote>
-<p><code>git clone git://github.com/sablonier/flexfolio.git</code></p>
-</blockquote>
-<p>==Step 3== <strong> Copy the example configurations</strong> to your Bolt CMS app directory with</p>
-<blockquote>
-<p><code>cp flexfolio/config-examples/config.example.yml ../app/config/config.yml</code></p>
-<p><code>cp flexfolio/config-examples/contenttypes.example.yml ../app/config/contenttypes.yml</code></p>
-<p><code>cp flexfolio/config-examples/taxonomy.example.yml ../app/config/taxonomy.yml</code></p>
-<p><code>cp flexfolio/config-examples/menu.example.yml ../app/config/menu.yml</code></p>
-</blockquote>
+<p>:nut_and_bolt:1 cd to theme directory in your new bolt installation</p>
+<dl>
+<dt><code>cd theme/</code></dt>
+<dd><p>nut_and_bolt:2 To <strong>get the latest flexfolio theme</strong> clone the repository with git</p></dd>
+<dt><code>git clone git://github.com/sablonier/flexfolio.git</code></dt>
+<dd><p>nut_and_bolt:3 <strong> Copy the example configurations</strong> to your Bolt CMS app directory with</p></dd>
+</dl>
+<p><code>cp flexfolio/config-examples/config.example.yml ../app/config/config.yml</code>
+<code>cp flexfolio/config-examples/contenttypes.example.yml ../app/config/contenttypes.yml</code>
+<code>cp flexfolio/config-examples/taxonomy.example.yml ../app/config/taxonomy.yml</code>
+<code>cp flexfolio/config-examples/menu.example.yml ../app/config/menu.yml</code></p>
 <h4 id="create-first-user-and-login">Create first user and login</h4>
 <p>Point your webbrowser to the address admin panel where you installed Bolt CMS (i.e. <a href="https://www.myname.com/admin">https://www.myname.com/admin</a>) and create the first user. This will be your main admin user (called root user in Bolt CMS). Later you can add more users.</p>
-<blockquote>
 <p><code>https://www.myname.com/admin</code></p>
-</blockquote>
 <p>Please note that with All Mine Bolt CMS the address of the admin panel is <strong>/admin</strong> and NOT /bolt.</p>
 <h4 id="install-translation-extension-bolttranslate">Install translation extension bolt/translate</h4>
-<p>==Step 1== On the dashboard click on &quot;Extensions&quot;. In the field &quot;Install a new Extension type:</p>
-<blockquote>
+<p>:nut_and_bolt:1 On the dashboard click on &quot;Extensions&quot;. In the field &quot;Install a new Extension type:</p>
 <p><code>translate</code></p>
-</blockquote>
-<p>and browse versions of this extension. <strong>Install the latest stable version</strong> of the extension &quot;animal/translate&quot;. In case you see a warning after installing the extension choose &quot;-&gt;Configuration/Check Database&quot; and <strong>update the database</strong>.</p>
-<p>==Step 2== Go back to your shell and copy the example extension configuration file with</p>
-<blockquote>
+<dl>
+<dt>and browse versions of this extension. <strong>Install the latest stable version</strong> of the extension &quot;animal/translate&quot;. In case you see a warning after installing the extension choose &quot;-&gt;Configuration/Check Database&quot; and <strong>update the database</strong>.</dt>
+<dd><p>nut_and_bolt:2 Go back to your shell and copy the example extension configuration file with</p></dd>
+</dl>
 <p><code>cp flexfolio/config-examples/extensions/translate.animal.example.yml ../app/config/extensions/translate.animal.yml</code></p>
-</blockquote>
-<p>Point your your browser to your webaddress, without /admin and you should see your site. Start to fill it with content!</p>
+<p>Point your your browser to your webaddress, without /admin and you should see your site. Start to publish your content!</p>
                     </section>
                 </div>
             </main>
