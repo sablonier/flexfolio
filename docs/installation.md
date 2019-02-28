@@ -1,5 +1,5 @@
 ### Quick install via (S)FTP
-Bolt CMS is a lightweight and simple Content Management System. You don't need to install any databases and extensions with this quick install. You just need to copy the pre-configured content of flexfolio-bolt-folder to your webserver root (or folder) and let Bolt CMS and flexfolio theme andconfiguration do the rest.
+Bolt CMS is a lightweight and simple Content Management System. You don't need to install any databases and extensions with this quick install. You just need to copy the pre-configured content of flexfolio-bolt-folder to your webserver root (or folder) and let Bolt CMS and flexfolio theme and configuration do the rest.
 
 **Step 1:** **Download** pre-configured Flexfolio-Bolt-CMS from
 
@@ -69,17 +69,17 @@ Please note that with All Mine Bolt CMS the address of the admin panel is **/adm
 
 #### Install translation extension bolt/translate
 
-**Step 1:** On the dashboard click on "Extensions". In the field "Install a new Extension type
+**Step 1:** On the dashboard click on "Extensions". In the field "Install a new Extension" type
 
 `translate`
 
-and browse versions of this extension. **Install the latest stable version** of the extension "animal/translate". In case you see a warning after installing the extension choose "->Configuration/Check Database" and **update the database**.
+and browse the versions of this extension. **Install the latest stable version** of the extension "animal/translate" now. In case you see a warning after installing the extension choose "->Configuration/Check Database" and **update the database**. Or do that anyway.
 
 **Step 2:** Go back to your shell and copy the example extension configuration file with
 
 `cp flexfolio/config-examples/extensions/translate.animal.example.yml ../app/config/extensions/translate.animal.yml`
 
-Point your your browser to your webaddress, without /admin and you should see your site. Start to publish your content.
+Point your your browser to your webaddress, without /admin in URL and you should see your site. Go back to the dashboard under /admin and tart to publish your content.
 
 
 
