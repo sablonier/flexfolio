@@ -22,7 +22,3 @@ github:
 menu:
     installation.md:
         label: Installation
-    configuration.md:
-        label: Configuration
-    about-license.md:
-        label: About and License

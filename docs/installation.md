@@ -1,5 +1,5 @@
 ### Quick install via (S)FTP
-Bolt CMS is a lightweight and simple Content Management System. You don't need to install any databases and extensions with this quick install. You just need to copy the pre-configured content of flexfolio-bolt-folder to your webserver root (or folder) and let Bolt CMS and flexfolio configuration do the rest.
+Bolt CMS is a lightweight and simple Content Management System. You don't need to install any databases and extensions with this quick install. You just need to copy the pre-configured content of flexfolio-bolt-folder to your webserver root (or folder) and let Bolt CMS and flexfolio theme andconfiguration do the rest.
 
 **Step 1:** **Download** pre-configured Flexfolio-Bolt-CMS from
 
@@ -7,7 +7,7 @@ Bolt CMS is a lightweight and simple Content Management System. You don't need t
 
 **Step 2:** **Extract** the .zip-File
 
-**Step 3:** Get the (S)FTP-Crendentials of your hosting and **copy all the content of the folder you got to your webroot** via your favourite FTP-Programm (i.e. [Cyberduck](https://cyberduck.io/) )
+**Step 3:** Get the (S)FTP-Crendentials of your hosting and **copy all the content of the folder to your webroot** via your favourite FTP-Programm (i.e. [Cyberduck](https://cyberduck.io/) )
 
 **Step 4:** **Point your webbrowser to your webserver** (i.e. https://www.myname.com/admin) and start with creating the first user.
 
