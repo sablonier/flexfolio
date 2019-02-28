@@ -1,14 +1,15 @@
 ### Quick install via (S)FTP
-Bolt CMS is a lightweight and simple Content Management System. You don't need to install any databases and extensions. With this quick install you just copy the preconfigured content of flexfolio-bolt to your webserver and let do Bolt CMS the rest.
+Bolt CMS is a lightweight and simple Content Management System. You don't need to install any databases and extensions with this quick install. You just need to copy the pre-configured content of flexfolio-bolt-folder to your webserver root (or folder) and let Bolt CMS and flexfolio configuration do the rest.
 
-:nut_and_bolt:1 **Download** preconfigured Flexfolio-Bolt-CMS from
->`https://download.all-mine.org/downloads/flexfolio-bolt-3.6.5.zip`
+**Step 1:** **Download** pre-configured Flexfolio-Bolt-CMS from
 
-:nut_and_bolt:2 **Extract** the .zip-File
+`https://download.all-mine.org/downloads/flexfolio-bolt-3.6.5.zip`
 
-:nut_and_bolt:3 Get the (S)FTP-Crendentials of your hosting and **copy all the content of the folder you got to your webroot** via your favourite FTP-Programm (i.e. [Cyberduck](https://cyberduck.io/) )
+**Step 2:** **Extract** the .zip-File
 
-:nut_and_bolt:4 **Point your webbrowser to your webserver** (i.e. https://www.myname.com/admin) and start with creating the first user.
+**Step 3:** Get the (S)FTP-Crendentials of your hosting and **copy all the content of the folder you got to your webroot** via your favourite FTP-Programm (i.e. [Cyberduck](https://cyberduck.io/) )
+
+**Step 4:** **Point your webbrowser to your webserver** (i.e. https://www.myname.com/admin) and start with creating the first user.
 
 
 
@@ -16,72 +17,69 @@ Bolt CMS is a lightweight and simple Content Management System. You don't need t
 *For this installation you will need **shell access (ssh)** to your webserver.* All Mine Flexfolio comes with it's own theme and configurations files for Bolt CMS. You can install your own Bolt CMS via shell and with a few steps more you  are with flexfolio theme and all needed extensions.
 
 #### Bolt CMS install
-:nut_and_bolt:1 Login to your server and change to your **webroot directory** (`htdocs`, `www` or "whateverwebroot")
+**Step 1:** Login to your server and change to your **webroot directory** (`htdocs`, `www` or `whateverwebroot`), i.e.
 
->`cd htdocs/`
+`cd htdocs/`
 
-:nut_and_bolt:2 Get latest Bolt CMS distribution for **flat structure** install:
+**Step 2:** Get latest Bolt CMS distribution for **flat structure** install:
 
->`curl -O https://bolt.cm/distribution/bolt-latest-flat-structure.tar.gz`
+`curl -O https://bolt.cm/distribution/bolt-latest-flat-structure.tar.gz`
 
-:nut_and_bolt:3 **Decompress** the file and get all files
+**Step 3:** **Decompress** the file and get all files
 
-These step takes some seconds, be patient after sending this line.
+These step will take some time, be patient after executing this command.
 
->`tar -xzf bolt-latest-flat-structure.tar.gz --strip-components=1`
+`tar -xzf bolt-latest-flat-structure.tar.gz --strip-components=1`
 
-:nut_and_bolt:4 **Init Bolt CMS** with following
+**Step 4:** **Init Bolt CMS** with following
 
->`php app/nut init`
+`php app/nut init`
 
 You could get some warnings but at the end you should get a greeting with Bolt CMS version *Welcome to Bolt! - version 3.x.x*
 
 
-:nut_and_bolt:5 If everything goes well **remove** the compressed tar.gz-File
+**Step 5:** If everything goes well **remove** the compressed tar.gz-File
 
->`rm bolt-latest-flat-structure.tar.gz`
+`rm bolt-latest-flat-structure.tar.gz`
 
 #### Flexfolio theme install
 
-:nut_and_bolt:1 cd to theme directory in your new bolt installation
+**Step 1:** cd to theme directory in your new bolt installation
 
 `cd theme/`
 
-:nut_and_bolt:2 To **get the latest flexfolio theme** clone the repository with git
+**Step 2:** To **get the latest flexfolio theme** clone the repository with git
 
->`git clone git://github.com/sablonier/flexfolio.git`
+`git clone git://github.com/sablonier/flexfolio.git`
 
-:nut_and_bolt:3 ** Copy the example configurations** to your Bolt CMS app directory with
+**Step 3:** ** Copy the example configurations** to your Bolt CMS app directory with
 
->`cp flexfolio/config-examples/config.example.yml ../app/config/config.yml`
-
->`cp flexfolio/config-examples/contenttypes.example.yml ../app/config/contenttypes.yml`
-
->`cp flexfolio/config-examples/taxonomy.example.yml ../app/config/taxonomy.yml`
-
->`cp flexfolio/config-examples/menu.example.yml ../app/config/menu.yml`
+`cp flexfolio/config-examples/config.example.yml ../app/config/config.yml`
+`cp flexfolio/config-examples/contenttypes.example.yml ../app/config/contenttypes.yml`
+`cp flexfolio/config-examples/taxonomy.example.yml ../app/config/taxonomy.yml`
+`cp flexfolio/config-examples/menu.example.yml ../app/config/menu.yml`
 
 #### Create first user and login
 
 Point your webbrowser to the address admin panel where you installed Bolt CMS (i.e. https://www.myname.com/admin) and create the first user. This will be your main admin user (called root user in Bolt CMS). Later you can add more users.
 
->`https://www.myname.com/admin`
+`https://www.myname.com/admin`
 
 Please note that with All Mine Bolt CMS the address of the admin panel is **/admin** and NOT /bolt.
 
 #### Install translation extension bolt/translate
 
-:nut_and_bolt:1 On the dashboard click on "Extensions". In the field "Install a new Extension type:
+**Step 1:** On the dashboard click on "Extensions". In the field "Install a new Extension type
 
->`translate`
+`translate`
 
 and browse versions of this extension. **Install the latest stable version** of the extension "animal/translate". In case you see a warning after installing the extension choose "->Configuration/Check Database" and **update the database**.
 
-:nut_and_bolt:2 Go back to your shell and copy the example extension configuration file with
+**Step 2:** Go back to your shell and copy the example extension configuration file with
 
->`cp flexfolio/config-examples/extensions/translate.animal.example.yml ../app/config/extensions/translate.animal.yml`
+`cp flexfolio/config-examples/extensions/translate.animal.example.yml ../app/config/extensions/translate.animal.yml`
 
-Point your your browser to your webaddress, without /admin and you should see your site. Start to publish your content!
+Point your your browser to your webaddress, without /admin and you should see your site. Start to publish your content.
 
 
 
