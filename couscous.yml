@@ -1,0 +1,28 @@
+# This is the Couscous configuration file, used to generate the documentation
+# See couscous.io for details.
+
+template:
+    # The following assumes you have a checkout of the template folder in ../couscous-template
+    directory: ../Extension-docs-template/public
+    index: index.md
+
+include:
+    - docs
+
+branch: gh-pages
+baseUrl: https://sablonier.github.io/flexfolio
+
+title: Flexfolio
+subTitle: Bolt CMS Template
+github:
+    user: sablonier
+    repo: flexfolio
+    editlink: https://github.com/sablonier/flexfolio/edit/master/docs/
+
+menu:
+    installation.md:
+        label: Installation
+    configuration.md:
+        label: Configuration
+    about-license.md:
+        label: About and License
