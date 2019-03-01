@@ -5,8 +5,8 @@
     {# fetching content #}
     {# ---------------- #}
     {% setcontent settings = 'settings' limit 1 returnsingle %}
-    {% set homeset = 'works/'~settings.homesort~'/'~settings.homecount %}
-    {% setcontent cards = homeset %}
+    {% set homeset = 'works/'~settings.homesort~'/'~settings.homecount  %}
+    {% setcontent cards = homeset where { displayhome: true } %}
     
     {# getting the magic with rows and columns            #}
     {# i.e. 10 entries should give = 3/3/2/2 not 3/3/3/1  #}
