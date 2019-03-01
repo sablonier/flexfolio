@@ -19,44 +19,43 @@
                         {% if record.gallery != "" %}
                         <div id="carouselExampleControls" data-wrap="true" data-interval="false" class="carousel slide" data-ride="carousel">
                             {% for item in record.gallery %}
-                                {% if item.image.file != "" %}
+                                {% if item.imgimage.file != "" %}
                                 <div class="carousel-item {% if loop.first %}active{% endif %}">
-                                    {% set resimage = { 'file' : item.image.file, 'size' : imagesize.large } %}
+                                    {% set resimage = { 'file' : item.imgimage.file, 'size' : imagesize.large } %}
                                     <div class="card">
                                         {% if resimage.file != "" %}
                                             {% include 'partials/_card_resimage.twig' with resimage %}
                                         {% endif %}
                                         <div class="card-text small">
-                                            {{ item.caption }}
+                                            {{ item.imgcaption }}
                                         </div>
                                     </div>
                                 </div>
-                                {% elseif item.video != ""%}
+                                {% elseif item.vidvideo != ""%}
                                 <div class="carousel-item {% if loop.first %}active{% endif %}">
                                     <div class="card">
-                                        <video width="100%" controls src="/files/{{ item.video }}">
-                                            Sorry, your browser doesn't support embedded videos, you can <a href="{{ item.video }}">download it</a>
+                                        <video width="100%" controls src="/files/{{ item.vidvideo }}">
+                                            Sorry, your browser doesn't support embedded videos, you can <a href="{{ item.vidvideo }}">download it</a>
                                             and watch it with your favorite video player.
                                         </video>
                                         <div class="card-text small">
-                                            {{ item.caption }}
+                                            {{ item.vidcaption }}
                                         </div>
                                     </div>
                                 </div>
-                                {% elseif item.file != ""%}
+                                {% elseif item.docfile != ""%}
                                     <div class="carousel-item {% if loop.first %}active{% endif %}">
-                                        
-                                        {% if item.preview.file != "" %}
-                                            {% set checkimage = item.preview.file %}
+                                        {% if item.docpreview != "" %}
+                                            {% set resimage = { 'file' : item.docpreview.file, 'size' : imagesize.large } %}
                                             <div class="card" >
                                             {% if resimage.file != "" %}
                                                 {% include 'partials/_card_resimage.twig' with resimage %}
                                             {% endif %}
                                         {% else %}
                                             <div class="card" >
-                                            <img src="/theme/flexfolio/images/missing_preview.png" width="100%" alt="{{ item.text }}">
+                                            <img src="/theme/flexfolio/images/missing_preview.png" width="100%" alt="No preview.">
                                         {% endif %}
-                                        <a href="/files/{{ item.file }}">
+                                        <a href="/files/{{ item.docfile }}">
                                         <div class="carousel-item-overlay">
                                             <span class="icon-down-circled">&nbsp;{{ "Download"}}</span>
                                         </div>
