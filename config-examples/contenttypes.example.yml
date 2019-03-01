@@ -9,6 +9,11 @@ settings:
         locale:
             type: locale
             group: Einstellungen
+        font:
+            type: select
+            values: [ rubik, crimson ]
+            default: 'rubik'
+            group: Einstellungen
         homesort:
             label: Sortierung auf der Startseite (Zufall oder nach Datum)
             enlabel: Sort
@@ -92,6 +97,11 @@ work:
         locale:
             type: locale
             group: inhalt
+        displayhome:
+            label: Zeige auf Startseite
+            type: checkbox
+            default: true
+            group: inhalt
         title:
             label: Titel
             type: text
@@ -129,46 +139,46 @@ work:
                 imageelement:
                     label: Bild
                     fields:
-                        title:
+                        imgtitle:
                             label: Titel
                             type: text
-                        image:
+                        imgimage:
                             label: Bild
                             type: image
                             extensions: [ gif, jpg, png ]
-                        caption:
+                        imgcaption:
                             label: Legende
                             type: textarea
                             height: 50px
                 videoelement:
                     label: Video
                     fields:
-                        title:
+                        vidtitle:
                             label: Titel
                             type: text
-                        video:
+                        vidvideo:
                             label: Video
                             type: file
                             extensions: [ mp4 ]
-                        caption:
+                        vidcaption:
                             label: Legende
                             type: textarea
                             height: 50px
                 documentelement:
                     label: Dokument
                     fields:
-                        title:
+                        doctitle:
                             label: Titel
                             type: text
-                        preview:
-                            label: Bild
+                        docpreview:
+                            label: Dokument Vorschaubild
                             type: image
                             extensions: [ gif, jpg, png ]
-                        file:
+                        docfile:
                             label: Dokument
                             type: file
                             extensions: [ pdf, zip ]
-                        caption:
+                        doccaption:
                             label: Legende
                             type: textarea
                             height: 50px

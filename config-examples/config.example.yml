@@ -165,19 +165,19 @@ recordsperpage: 10
 #                  translation files you should turn this off.
 caching:
     config: false
-    templates: true
+    templates: false
     request: false
     duration: 10
     authenticated: false
     thumbnails: true
-    translations: true
+    translations: false
 
 # Set 'enabled' to 'true' to log all content changes in the database.
 #
 # Unless you need to rigorously monitor every change to your site's content, it
 # is recommended to keep this disabled.
 changelog:
-    enabled: true
+    enabled: false
 
 # Default settings for thumbnails.
 #
@@ -202,7 +202,7 @@ thumbnails:
     cropping: crop
     notfound_image: bolt_assets://img/default_notfound.png
     error_image: bolt_assets://img/default_error.png
-    save_files: false
+    save_files: true
     allow_upscale: false
     exif_orientation: true
     only_aliases: false
@@ -413,7 +413,7 @@ extensions:
      composer:
          minimum-stability: stable      # Either 'stable', 'beta', or 'dev'. Setting 'dev' will allow you to install dev-master versions of extensions.
          prefer-stable: true            # Prefer stable releases over development ones
-         prefer-dist: false              # Forces installation from package dist even for dev versions.
+         prefer-dist: true              # Forces installation from package dist even for dev versions.
 #         prefer-source: false           # Forces installation from package sources when possible, including VCS information.
 #         config:
 #             optimize-autoloader: false     # Optimize autoloader during autoloader dump.
