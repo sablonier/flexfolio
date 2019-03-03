@@ -2,9 +2,17 @@
 # documentation for details: https://docs.bolt.cm/contenttypes/taxonomies
 
 pagesort:
-    label: Seiten sortieren
+    name: Sortierung
     slug: pagesort
     singular_slug: pagesort
     behaves_like: grouping
     options: { sorting: "Pages" }
+    has_sortorder: true
+
+worksort:
+    name: Sortierung
+    slug: worksort
+    singular_slug: worksort
+    behaves_like: grouping
+    options: { sorting: "Arbeiten" }
     has_sortorder: true

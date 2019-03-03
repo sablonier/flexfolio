@@ -202,6 +202,7 @@ work:
             label: Wähle eine Seite
             order: -datepublish
     default_status: published
+    taxonomy: [ pagesort ]
     record_template: record.twig
     recordsperpage: 10
     icon_many: "fa:file-text-o"
