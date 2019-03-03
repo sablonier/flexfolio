@@ -1,9 +1,12 @@
 ### Quick install via (S)FTP
+
+>This will install a ready-to-go and pre-configured Bolt CMS with flexfolio theme and all needed extensions.
+
 Bolt CMS is a lightweight and simple Content Management System. You don't need to install any databases and extensions with this quick install. You just need to copy the pre-configured content of flexfolio-bolt-folder to your webserver root (or folder) and let Bolt CMS and flexfolio theme and configuration do the rest.
 
 **Step 1:** **Download** pre-configured Flexfolio-Bolt-CMS from
 
-`https://download.all-mine.org/downloads/flexfolio-bolt-3.6.5.zip`
+`https://download.all-mine.org/downloads/flexfolio-bolt-latest-flat-structure.zip`
 
 **Step 2:** **Extract** the .zip-File
 
@@ -11,10 +14,9 @@ Bolt CMS is a lightweight and simple Content Management System. You don't need t
 
 **Step 4:** **Point your webbrowser to your webserver** (i.e. https://www.myname.com/admin) and start with creating the first user.
 
+### Expert install via shell (ssh)
 
-
-###Install via shell with own Bolt CMS install
-*For this installation you will need **shell access (ssh)** to your webserver.* All Mine Flexfolio comes with it's own theme and configurations files for Bolt CMS. You can install your own Bolt CMS via shell and with a few steps more you  are with flexfolio theme and all needed extensions.
+>With this install you will get latest Bolt CMS origin and the Flexfolio theme and extensions separately. All Mine Flexfolio comes with it's own theme and configurations files for Bolt CMS. You can install your individual Bolt CMS via shell and with a few steps more you  are with flexfolio theme and all needed extensions.
 
 #### Bolt CMS install
 **Step 1:** Login to your server and change to your **webroot directory** (`htdocs`, `www` or `whateverwebroot`), i.e.
@@ -55,8 +57,11 @@ You could get some warnings but at the end you should get a greeting with Bolt C
 **Step 3:** ** Copy the example configurations** to your Bolt CMS app directory with
 
 `cp flexfolio/config-examples/config.example.yml ../app/config/config.yml`
+
 `cp flexfolio/config-examples/contenttypes.example.yml ../app/config/contenttypes.yml`
+
 `cp flexfolio/config-examples/taxonomy.example.yml ../app/config/taxonomy.yml`
+
 `cp flexfolio/config-examples/menu.example.yml ../app/config/menu.yml`
 
 #### Create first user and login
