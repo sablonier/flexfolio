@@ -24,6 +24,15 @@
     <link rel="stylesheet" href="{{ asset('css/flexcards.css', 'theme') }}">
     <!-- Cookie alert -->
     <link rel="stylesheet" href="{{ asset('css/cookiealert.css', 'theme') }}">
+    <!-- Font size -->
+    {% if settings != "" and settings.fontsize != "" %}
+    {% set remsize = settings.fontsize/16 %}
+    <style>
+      body {
+        font-size: {{ remsize|replace(',','.') }}rem;
+      }
+    </style>
+    {% endif %}
   </head>
 
 
