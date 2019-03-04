@@ -7,6 +7,7 @@
 </div>
 <script src="{{ asset('js/cookiealert.js', 'theme') }}"></script>
 <!-- END Bootstrap-Cookie-Alert -->
+
 <nav class="navbar navbar-toggleable-md navbar-light fixed-top bg-faded">
   
   <!-- Sitename as home button -->
@@ -30,14 +31,4 @@
   <div class="collapse navbar-collapse" id="navbarNavDropdown">
     {{ include('partials/_menu.twig') }}
 
-    <!-- Search -->
-    {# <form class="form-inline my-2 my-lg-0" method="get" action="{{ path('search') }}" id="searchform-inline" enctype="text/plain">
-                <div class="input-group">
-                    <input type="search" class="form-control" value="{% if search is defined %}{{ search|escape }}{% endif %}" placeholder="{{ __('general.phrase.search-ellipsis') }}" name="search">
-                    <span class="input-group-btn">
-                    <button class="btn btn-primary" type="submit">{{ __('general.phrase.search') }}</button>
-                    </span>
-                </div>
-                </form>
-              </div>#}
 </nav>
