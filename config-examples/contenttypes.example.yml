@@ -37,6 +37,19 @@ settings:
             group: Einstellungen
             translatable: true
             default: all-mine.org --- Change footer in settings.
+        socialmedia:
+            label: Social Media
+            type: repeater
+            group: Einstellungen
+            collapsible: true
+            translatable: true
+            fields:
+                title:
+                    label: Name
+                    type: text
+                links:
+                    label: Link
+                    type: text
         dedata:
             type: hidden
         deslug:
