@@ -1,10 +1,13 @@
 function scrollButton() {
-    var x = document.getElementById("scrolldown");
-    x.className = "show";
-    setTimeout(function () {
-        x.className = x.className.replace("show", "");
-    }, 5000);
+    if (document.getElementById("scrolldown")) {
+        var x = document.getElementById("scrolldown");
+        x.className = "show";
+        setTimeout(function () {
+            x.className = x.className.replace("show", "");
+        }, 5000);
+    }
 }
+
 window.onload = function () {
     scrollButton();
 }
@@ -14,13 +17,15 @@ window.onscroll = function () {
 };
 
 function scrollFunction() {
-    if (document.body.scrollTop > 40 || document.documentElement.scrollTop > 40) {
-        document.getElementById("scrollup").style.display = "block";
-        setTimeout(function () {
-            document.getElementById("scrollup").style.display = ("none");
-        }, 8000);
-    } else {
-        document.getElementById("scrollup").style.display = "none";
+    if (document.getElementById("scrollup")) {
+        if (document.body.scrollTop > 40 || document.documentElement.scrollTop > 40) {
+            document.getElementById("scrollup").style.display = "block";
+            setTimeout(function () {
+                document.getElementById("scrollup").style.display = ("none");
+            }, 8000);
+        } else {
+            document.getElementById("scrollup").style.display = "none";
+        }
     }
 }
 
