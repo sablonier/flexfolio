@@ -1,0 +1,28 @@
+/* Import font files */
+@font-face {
+    font-family: 'font-bolditalic';
+    src: url('fonts/hinted-ElaineSans-BoldItalic.ttf');
+    font-weight: bold;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'font-bold';
+    src: url('fonts/hinted-ElaineSans-Bold.ttf');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'font-regular';
+    src: url('fonts/hinted-ElaineSans-Regular.ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'font-italic';
+    src: url('fonts/hinted-ElaineSans-Italic.ttf');
+    font-weight: normal;
+    font-style: italic;
+}

@@ -16,7 +16,7 @@
     <!-- Fonts CSS -->
     {% setcontent settings = 'settings' limit 1 returnsingle %}
     {% if settings != "" and settings.font != "" %}
-    <link rel="stylesheet" href="{{ asset('fonts/font-'~settings.font~'.css', 'theme') }}">
+      <link rel="stylesheet" href="{{ asset('fonts/font-'~settings.font~'.css', 'theme') }}">
     {% else %}
       <link rel="stylesheet" href="{{ asset('fonts/font-rubik.css', 'theme') }}">
     {% endif %}
