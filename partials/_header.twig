@@ -22,26 +22,9 @@
     {% endif %}
     <!-- Flexcards CSS -->
     <link rel="stylesheet" href="{{ asset('css/flexcards.css', 'theme') }}">
-    <!-- Cookie consent -->
-    <script src="{{ asset('js/cookieconsent.min.js', 'theme') }}"></script>
-    <script>
-      window.addEventListener("load", function(){
-      window.cookieconsent.initialise({
-        "palette": {
-          "popup": {
-            "background": "#111"
-          },
-          "button": {
-            "background": "#fff",
-            "border-radius": 0
-          }
-        },
-        "theme": "classic",
-        "content": {
-          "message": "This website uses cookies to ensure you get the best experience."
-        }
-      })});
-    </script>
+    <!-- Cookie alert -->
+    <link rel="stylesheet" href="{{ asset('css/cookiealert.css', 'theme') }}">
   </head>
+
 
 
