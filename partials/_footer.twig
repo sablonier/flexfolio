@@ -1,11 +1,18 @@
 
 {% setcontent settings = "settings" limit 1 returnsingle %}
-<footer class="column footer">
+<footer class="col-12 footer">
     <div style="margin: 5px;">
         <div style="border-top: 1px solid black; padding-top: 5px;">
             <span class="small">© {{ "now"|date("Y") }} {{ settings.footer }}</span>
         </div>
     </div>
+    {% if settings.socialmedia != "" %}
+    <div style="margin: 5px;">
+        {% for item in settings.socialmedia %}
+            <a href="{{item.links}}"><div class="button">{{item.title|first}}</div></a>
+        {% endfor %}
+    </div>
+    {% endif %}
 </footer>
     
     <!-- jQuery first, then Tether, then Bootstrap JS. -->
