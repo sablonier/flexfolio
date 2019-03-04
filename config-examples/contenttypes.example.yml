@@ -11,8 +11,13 @@ settings:
             group: Einstellungen
         font:
             type: select
-            values: [ rubik, crimson ]
+            values: [ rubik, crimson, elaine, avrile ]
             default: 'rubik'
+            group: Einstellungen
+        fontsize:
+            label: Basis Schriftgrösse
+            type: integer
+            default: 16
             group: Einstellungen
         homesort:
             label: Sortierung auf der Startseite (Zufall oder nach Datum)
@@ -202,7 +207,7 @@ work:
             label: Wähle eine Seite
             order: -datepublish
     default_status: published
-    taxonomy: [ pagesort ]
+    taxonomy: [ worksort ]
     record_template: record.twig
     recordsperpage: 10
     icon_many: "fa:file-text-o"

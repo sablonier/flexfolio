@@ -6,7 +6,7 @@ pagesort:
     slug: pagesort
     singular_slug: pagesort
     behaves_like: grouping
-    options: { sorting: "Pages" }
+    options: [ Pages ]
     has_sortorder: true
 
 worksort:
@@ -14,5 +14,5 @@ worksort:
     slug: worksort
     singular_slug: worksort
     behaves_like: grouping
-    options: { sorting: "Arbeiten" }
+    options: [ Work ]
     has_sortorder: true
