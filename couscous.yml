@@ -2,8 +2,9 @@
 # See couscous.io for details.
 
 template:
-    # The following assumes you have a checkout of the template folder in ../couscous-template
-    directory: ../Extension-docs-template/public
+    # The following assumes you have a checkout of https://github.com/sablonier/theme-docs-template
+    # in your theme folder of your bolt installation
+    directory: ../theme-docs-template/public
     index: index.md
 
 include:
@@ -20,13 +21,31 @@ github:
     editlink: https://github.com/sablonier/flexfolio/edit/master/docs/
 
 menu:
+    basics:
+        label: Basics
+        items:
+            installation:
+                file: basics.md
     installation:
         label: Installation
         items:
-            item1:
+            installation:
                 file: installation.md
+                submenu: 
+                    quickinstall:
+                        label: Pre-configured install via SFTP, Bolt CMS included
+                        file: quickinstall.md
+                    shellinstall:
+                        label: Expert install via shell (ssh)
+                        file: expertinstall.md
     licence:
-        label: License
+        label: About/License
         items:
             item1:
                 file: license.md
+                #submenu:
+                #    subitem1:
+                #        file: licdense.md
+                #    subitem2:
+                #        file: licaense.md
+                        

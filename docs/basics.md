@@ -1,0 +1,5 @@
+### Portfolios made easy with Bolt CMS
+
+>**~~Fat CMS~~** like *Wordpress* or *Drupal* are a wellknown overload for a simple and easy portfolio solution for artists and designers. On the other hand with poor man's solutions like Wix, Allyounet, Square and others you give up control over design and data. [Bolt CMS](https://bolt.cm/)  is a lightweight-fast-simple CMS and could be the better solution for your portfolio, for less money and hosted by yourself with full control over your content.
+
+Some time ago there has been a very cool and nifty small CMS which fullfilled all needs for designers: [Indexhibit](https://www.indexhibit.org/) . Easy to install, made from designers for designers, easy to use, good community. This has been the inspiration to build a indexhibit-like portfolio solution for artists and designers hooking on Bolt CMS. Mainly flexfolio as such is a simple theme built for Bolt CMS 3+. And it's free and open source. You can get it **[here](installation.html)**.
