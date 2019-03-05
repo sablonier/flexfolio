@@ -18,7 +18,7 @@ subTitle: Bolt CMS Theme
 github:
     user: sablonier
     repo: flexfolio
-    editlink: https://github.com/sablonier/flexfolio/edit/master/docs/
+    editlink: https://github.com/sablonier/flexfolio/tree/master/docs/
 
 menu:
     basics:
@@ -43,9 +43,3 @@ menu:
         items:
             item1:
                 file: license.md
-                #submenu:
-                #    subitem1:
-                #        file: licdense.md
-                #    subitem2:
-                #        file: licaense.md
-                        
