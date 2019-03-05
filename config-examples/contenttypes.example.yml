@@ -74,6 +74,11 @@ pages:
         locale:
             type: locale
             group: inhalt
+        displaymenu:
+            label: Seite als Menü-Eintrag
+            type: checkbox
+            default: true
+            group: inhalt
         title:
             label: Titel
             type: text

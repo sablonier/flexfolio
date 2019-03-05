@@ -13,12 +13,20 @@ branch: gh-pages
 baseUrl: https://sablonier.github.io/flexfolio
 
 title: Flexfolio
-subTitle: Bolt CMS Template
+subTitle: Bolt CMS Theme
 github:
     user: sablonier
     repo: flexfolio
     editlink: https://github.com/sablonier/flexfolio/edit/master/docs/
 
 menu:
-    installation.md:
+    installation:
         label: Installation
+        items:
+            item1:
+                file: installation.md
+    licence:
+        label: License
+        items:
+            item1:
+                file: license.md
