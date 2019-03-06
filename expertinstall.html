@@ -71,7 +71,7 @@
                                         </ul>
                                                                             <ul>
                                                                                                                                     <li class="">
-                                                <a href="https://sablonier.github.io/flexfolio/expertinstall.html" class="">
+                                                <a href="https://sablonier.github.io/flexfolio/expertinstall.html" class="is-active">
                                                     Expert install via shell (ssh)
                                                 </a>
                                             </li>
@@ -96,7 +96,7 @@
                                         </ul>
                                                                             <ul>
                                                                                                                                     <li class="">
-                                                <a href="https://sablonier.github.io/flexfolio/expertinstall.html" class="">
+                                                <a href="https://sablonier.github.io/flexfolio/expertinstall.html" class="is-active">
                                                     Expert install via shell (ssh)
                                                 </a>
                                             </li>
@@ -144,7 +144,7 @@
                             </span>
                             <span>Fork</span>
                         </a>
-                                                <a href="https://github.com/sablonier/flexfolio/tree/master/docs/index.md" class="button is-info is-hidden-touch" aria-label="Edit the contents of this page on GitHub">
+                                                <a href="https://github.com/sablonier/flexfolio/tree/master/docs/expertinstall.md" class="button is-info is-hidden-touch" aria-label="Edit the contents of this page on GitHub">
                             <span class="icon is-small">
                                 <i class="fab fa-github"></i>
                             </span>
@@ -154,10 +154,44 @@
 
                 <div class="docs__main--body">
                     <section id="content" class="content">
-                        <h2 id="flexfolio-theme-docs">Flexfolio Theme Docs</h2>
-<p>This is the start for a documentation for the All-Mine Flexfolio theme for Bolt CMS. The theme is released in an alpha state. Please help to improve the docs and edit this pages on Github.</p>
-<p>© 2019 Yves Sablonier, MIT License</p>
-<p>Portfolios made easy with Bolt CMS: <a href="https://www.all-mine.org">https://www.all-mine.org</a></p>
+                        <h3 id="expert-install-via-shell-ssh">Expert install via shell (ssh)</h3>
+<blockquote>
+<p>With this install you will get latest Bolt CMS and the Flexfolio theme and extensions separately. You will need to configure the install yourself. All Mine Flexfolio comes example contenttypes files for Bolt CMS. Here you can install your individual Bolt CMS via shell and with a few steps more you are with flexfolio theme and all needed configuration files and extensions.</p>
+</blockquote>
+<h4 id="bolt-cms-install">Bolt CMS install</h4>
+<p><strong>Step 1:</strong> Login to your server and change to your <strong>webroot directory</strong> (<code>htdocs</code>, <code>www</code> or <code>whateverwebroot</code>), i.e.</p>
+<p><code>cd htdocs/</code></p>
+<p><strong>Step 2:</strong> Get latest Bolt CMS distribution for <strong>flat structure</strong> install:</p>
+<p><code>curl -O https://bolt.cm/distribution/bolt-latest-flat-structure.tar.gz</code></p>
+<p><strong>Step 3:</strong> <strong>Decompress</strong> the file and get all files</p>
+<p>These step will take some time, be patient after executing this command.</p>
+<p><code>tar -xzf bolt-latest-flat-structure.tar.gz --strip-components=1</code></p>
+<p><strong>Step 4:</strong> <strong>Init Bolt CMS</strong> with following</p>
+<p><code>php app/nut init</code></p>
+<p>You could get some warnings but at the end you should get a greeting with Bolt CMS version <em>Welcome to Bolt! - version 3.x.x</em></p>
+<p><strong>Step 5:</strong> If everything goes well <strong>remove</strong> the compressed tar.gz-File</p>
+<p><code>rm bolt-latest-flat-structure.tar.gz</code></p>
+<h4 id="flexfolio-theme-install">Flexfolio theme install</h4>
+<p><strong>Step 1:</strong> cd to theme directory in your new bolt installation</p>
+<p><code>cd theme/</code></p>
+<p><strong>Step 2:</strong> To <strong>get the latest flexfolio theme</strong> clone the repository with git</p>
+<p><code>git clone git://github.com/sablonier/flexfolio.git</code></p>
+<p><strong>Step 3:</strong> <strong> Copy the example configurations</strong> to your Bolt CMS app directory with</p>
+<p><code>cp flexfolio/config-examples/config.example.yml ../app/config/config.yml</code></p>
+<p><code>cp flexfolio/config-examples/contenttypes.example.yml ../app/config/contenttypes.yml</code></p>
+<p><code>cp flexfolio/config-examples/taxonomy.example.yml ../app/config/taxonomy.yml</code></p>
+<p><code>cp flexfolio/config-examples/menu.example.yml ../app/config/menu.yml</code></p>
+<h4 id="create-first-user-and-login">Create first user and login</h4>
+<p>Point your webbrowser to the address admin panel where you installed Bolt CMS (i.e. <a href="https://www.myname.com/admin">https://www.myname.com/admin</a>) and create the first user. This will be your main admin user (called root user in Bolt CMS). Later you can add more users.</p>
+<p><code>https://www.myname.com/admin</code></p>
+<p>Please note that with All Mine Bolt CMS the address of the admin panel is <strong>/admin</strong> and NOT /bolt.</p>
+<h4 id="install-translation-extension-bolttranslate">Install translation extension bolt/translate</h4>
+<p><strong>Step 1:</strong> On the dashboard click on &quot;Extensions&quot;. In the field &quot;Install a new Extension&quot; type</p>
+<p><code>translate</code></p>
+<p>and browse the versions of this extension. <strong>Install the latest stable version</strong> of the extension &quot;animal/translate&quot; now. In case you see a warning after installing the extension choose &quot;-&gt;Configuration/Check Database&quot; and <strong>update the database</strong>. Or do that anyway.</p>
+<p><strong>Step 2:</strong> Go back to your shell and copy the example extension configuration file with</p>
+<p><code>cp flexfolio/config-examples/extensions/translate.animal.example.yml ../app/config/extensions/translate.animal.yml</code></p>
+<p>Point your your browser to your webaddress, without /admin in URL and you should see your site. Go back to the dashboard under /admin and tart to publish your content.</p>
                     </section>
                 </div>
             </main>

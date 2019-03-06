@@ -1,10 +1,10 @@
-                                        <!DOCTYPE html>
+                                                        <!DOCTYPE html>
 <html lang="en">
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Installation &raquo; Flexfolio</title>
+        <title>Flexfolio</title>
 
         <link rel="stylesheet" href="https://sablonier.github.io/flexfolio/css/main.css">
         <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro|Source+Sans+Pro:300,400,600,700" rel="stylesheet">
@@ -43,14 +43,79 @@
                 
                                 <div class="docs__sidebar--menu">
                     <nav id="sidebar" class="menu" role="navigation">
+                                                <p class="menu-label">
+                                Why to use this
+                        </p>
+                        <ul class="menu-list">
+                                                                                                                            <li class="">
+                                    <a href="https://sablonier.github.io/flexfolio/basics.html" class="">
+                                        Basics
+                                    </a>
+                                                                    </li>
+                                
+                                                    </ul>
+                                                <p class="menu-label">
+                                Installation
+                        </p>
                         <ul class="menu-list">
                                                                                                                             <li class="">
                                     <a href="https://sablonier.github.io/flexfolio/installation.html" class="is-active">
                                         Installation
                                     </a>
-                                </li>
+                                                                            <ul>
+                                                                                                                                    <li class="">
+                                                <a href="https://sablonier.github.io/flexfolio/quickinstall.html" class="">
+                                                    Pre-configured install via SFTP, Bolt CMS included
+                                                </a>
+                                            </li>
+                                        </ul>
+                                                                            <ul>
+                                                                                                                                    <li class="">
+                                                <a href="https://sablonier.github.io/flexfolio/expertinstall.html" class="">
+                                                    Expert install via shell (ssh)
+                                                </a>
+                                            </li>
+                                        </ul>
+                                                                    </li>
+                                
                                                     </ul>
-                    </nav>
+                                                <p class="menu-label">
+                                Settings
+                        </p>
+                        <ul class="menu-list">
+                                                                                                                            <li class="">
+                                    <a href="https://sablonier.github.io/flexfolio/installation.html" class="is-active">
+                                        Installation
+                                    </a>
+                                                                            <ul>
+                                                                                                                                    <li class="">
+                                                <a href="https://sablonier.github.io/flexfolio/quickinstall.html" class="">
+                                                    Pre-configured install via SFTP, Bolt CMS included
+                                                </a>
+                                            </li>
+                                        </ul>
+                                                                            <ul>
+                                                                                                                                    <li class="">
+                                                <a href="https://sablonier.github.io/flexfolio/expertinstall.html" class="">
+                                                    Expert install via shell (ssh)
+                                                </a>
+                                            </li>
+                                        </ul>
+                                                                    </li>
+                                
+                                                    </ul>
+                                                <p class="menu-label">
+                                About/License
+                        </p>
+                        <ul class="menu-list">
+                                                                                                                            <li class="">
+                                    <a href="https://sablonier.github.io/flexfolio/license.html" class="">
+                                        License
+                                    </a>
+                                                                    </li>
+                                
+                                                    </ul>
+                                            </nav>
                 </div>
                 
                 <div class="docs__sidebar--footer is-hidden-touch">
@@ -64,7 +129,7 @@
             <main class="docs__main">
                 <header class="docs__main--header">
                     <div class="pagetitle">
-                        Installation
+                        Bolt CMS Theme
                     </div>
 
                                             <a href="https://github.com/sablonier/flexfolio" class="button is-info is-hidden-touch" aria-label="This extension on GitHub">
@@ -79,7 +144,7 @@
                             </span>
                             <span>Fork</span>
                         </a>
-                                                <a href="https://github.com/sablonier/flexfolio/edit/master/docs/installation.md" class="button is-info is-hidden-touch" aria-label="Edit the contents of this page on GitHub">
+                                                <a href="https://github.com/sablonier/flexfolio/tree/master/docs/installation.md" class="button is-info is-hidden-touch" aria-label="Edit the contents of this page on GitHub">
                             <span class="icon is-small">
                                 <i class="fab fa-github"></i>
                             </span>
@@ -89,54 +154,14 @@
 
                 <div class="docs__main--body">
                     <section id="content" class="content">
-                        <h3 id="quick-install-via-sftp">Quick install via (S)FTP</h3>
+                        <h3 id="installation">Installation</h3>
 <blockquote>
-<p>This will install a ready-to-go and pre-configured Bolt CMS with flexfolio theme and all needed extensions.</p>
+<p>There are two options recently to install Bolt CMS with Flexfolio theme. With quickinstall you will not have to configure any databases or else on your hosting, it's just copy and paste a folder via (S)FTP. Make sure your providers fulfills <a href="https://docs.bolt.cm/3.6/getting-started/requirements">Bolt CMS requirements</a>.</p>
 </blockquote>
-<p>Bolt CMS is a lightweight and simple Content Management System. You don't need to install any databases and extensions with this quick install. You just need to copy the pre-configured content of flexfolio-bolt-folder to your webserver root (or folder) and let Bolt CMS and flexfolio theme and configuration do the rest.</p>
-<p><strong>Step 1:</strong> <strong>Download</strong> pre-configured Flexfolio-Bolt-CMS from</p>
-<p><code>https://download.all-mine.org/downloads/flexfolio-bolt-latest-flat-structure.zip</code></p>
-<p><strong>Step 2:</strong> <strong>Extract</strong> the .zip-File</p>
-<p><strong>Step 3:</strong> Get the (S)FTP-Crendentials of your hosting and <strong>copy all the content of the folder to your webroot</strong> via your favourite FTP-Programm (i.e. <a href="https://cyberduck.io/">Cyberduck</a> )</p>
-<p><strong>Step 4:</strong> <strong>Point your webbrowser to your webserver</strong> (i.e. <a href="https://www.myname.com/admin">https://www.myname.com/admin</a>) and start with creating the first user.</p>
-<h3 id="expert-install-via-shell-ssh">Expert install via shell (ssh)</h3>
-<blockquote>
-<p>With this install you will get latest Bolt CMS origin and the Flexfolio theme and extensions separately. All Mine Flexfolio comes with it's own theme and configurations files for Bolt CMS. You can install your individual Bolt CMS via shell and with a few steps more you  are with flexfolio theme and all needed extensions.</p>
-</blockquote>
-<h4 id="bolt-cms-install">Bolt CMS install</h4>
-<p><strong>Step 1:</strong> Login to your server and change to your <strong>webroot directory</strong> (<code>htdocs</code>, <code>www</code> or <code>whateverwebroot</code>), i.e.</p>
-<p><code>cd htdocs/</code></p>
-<p><strong>Step 2:</strong> Get latest Bolt CMS distribution for <strong>flat structure</strong> install:</p>
-<p><code>curl -O https://bolt.cm/distribution/bolt-latest-flat-structure.tar.gz</code></p>
-<p><strong>Step 3:</strong> <strong>Decompress</strong> the file and get all files</p>
-<p>These step will take some time, be patient after executing this command.</p>
-<p><code>tar -xzf bolt-latest-flat-structure.tar.gz --strip-components=1</code></p>
-<p><strong>Step 4:</strong> <strong>Init Bolt CMS</strong> with following</p>
-<p><code>php app/nut init</code></p>
-<p>You could get some warnings but at the end you should get a greeting with Bolt CMS version <em>Welcome to Bolt! - version 3.x.x</em></p>
-<p><strong>Step 5:</strong> If everything goes well <strong>remove</strong> the compressed tar.gz-File</p>
-<p><code>rm bolt-latest-flat-structure.tar.gz</code></p>
-<h4 id="flexfolio-theme-install">Flexfolio theme install</h4>
-<p><strong>Step 1:</strong> cd to theme directory in your new bolt installation</p>
-<p><code>cd theme/</code></p>
-<p><strong>Step 2:</strong> To <strong>get the latest flexfolio theme</strong> clone the repository with git</p>
-<p><code>git clone git://github.com/sablonier/flexfolio.git</code></p>
-<p><strong>Step 3:</strong> <strong> Copy the example configurations</strong> to your Bolt CMS app directory with</p>
-<p><code>cp flexfolio/config-examples/config.example.yml ../app/config/config.yml</code></p>
-<p><code>cp flexfolio/config-examples/contenttypes.example.yml ../app/config/contenttypes.yml</code></p>
-<p><code>cp flexfolio/config-examples/taxonomy.example.yml ../app/config/taxonomy.yml</code></p>
-<p><code>cp flexfolio/config-examples/menu.example.yml ../app/config/menu.yml</code></p>
-<h4 id="create-first-user-and-login">Create first user and login</h4>
-<p>Point your webbrowser to the address admin panel where you installed Bolt CMS (i.e. <a href="https://www.myname.com/admin">https://www.myname.com/admin</a>) and create the first user. This will be your main admin user (called root user in Bolt CMS). Later you can add more users.</p>
-<p><code>https://www.myname.com/admin</code></p>
-<p>Please note that with All Mine Bolt CMS the address of the admin panel is <strong>/admin</strong> and NOT /bolt.</p>
-<h4 id="install-translation-extension-bolttranslate">Install translation extension bolt/translate</h4>
-<p><strong>Step 1:</strong> On the dashboard click on &quot;Extensions&quot;. In the field &quot;Install a new Extension&quot; type</p>
-<p><code>translate</code></p>
-<p>and browse the versions of this extension. <strong>Install the latest stable version</strong> of the extension &quot;animal/translate&quot; now. In case you see a warning after installing the extension choose &quot;-&gt;Configuration/Check Database&quot; and <strong>update the database</strong>. Or do that anyway.</p>
-<p><strong>Step 2:</strong> Go back to your shell and copy the example extension configuration file with</p>
-<p><code>cp flexfolio/config-examples/extensions/translate.animal.example.yml ../app/config/extensions/translate.animal.yml</code></p>
-<p>Point your your browser to your webaddress, without /admin in URL and you should see your site. Go back to the dashboard under /admin and tart to publish your content.</p>
+<p><strong>Option 1: Quickinstall</strong> via download and install via (S)FTP. You will need your credentials for your hosting and a FTP-Client (i.e. <a href="https://cyberduck.io/">Cyberduck</a> ):
+<a href="quickinstall.html">Follow the steps here for pre-configured install</a> </p>
+<p><strong>Option 2: Individual Bolt CMS install via shell (ssh)</strong>. This guide will install Bolt CMS following <a href="https://docs.bolt.cm/3.6/installation/installation">official</a> Bolt CMS install instructions and install everything else then separately (theme, extensions, configurations). For this install you will need some basic knowledge how to use a shell (i.e. <em>Terminal</em> on OSX).
+<a href="shellinstall.html">Follow the steps here for shell install</a></p>
                     </section>
                 </div>
             </main>
@@ -145,7 +170,7 @@
         <script src="//ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
         <script>
-        var tipuesearch_pages = ["https://sablonier.github.io/flexfolio/installation.html"];
+        var tipuesearch_pages = ["https://sablonier.github.io/flexfolio/basics", "https://sablonier.github.io/flexfolio/installation", "https://sablonier.github.io/flexfolio/settings", "https://sablonier.github.io/flexfolio/licence"];
         </script>
         <script src="https://sablonier.github.io/flexfolio/tipuesearch/tipuesearch_set.js"></script>
         <script src="https://sablonier.github.io/flexfolio/tipuesearch/tipuesearch.min.js"></script>
