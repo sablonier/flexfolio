@@ -84,7 +84,7 @@
                         </p>
                         <ul class="menu-list">
                                                                                                                             <li class="">
-                                    <a href="https://sablonier.github.io/flexfolio/settings.html" class="">
+                                    <a href="https://sablonier.github.io/flexfolio/settings.html" class="is-active">
                                         Settings
                                     </a>
                                                                     </li>
@@ -130,7 +130,7 @@
                             </span>
                             <span>Fork</span>
                         </a>
-                                                <a href="https://github.com/sablonier/flexfolio/tree/master/docs/search.md" class="button is-info is-hidden-touch" aria-label="Edit the contents of this page on GitHub">
+                                                <a href="https://github.com/sablonier/flexfolio/tree/master/docs/settings.md" class="button is-info is-hidden-touch" aria-label="Edit the contents of this page on GitHub">
                             <span class="icon is-small">
                                 <i class="fab fa-github"></i>
                             </span>
@@ -140,8 +140,22 @@
 
                 <div class="docs__main--body">
                     <section id="content" class="content">
-                        <h1 id="search">Search</h1>
-<div id="tipue_search_content"></div>
+                        <h3 id="settings">Settings</h3>
+<blockquote>
+<p>There are two places where you have to edit the main settings: one is <em>Configuration-&gt;Main Configuration</em> where you set the site name, the other is <em>Einstellungen</em> where you have to create a new record to change i.e. fonts or footer text.</p>
+</blockquote>
+<h4 id="site-name">Site name</h4>
+<p>Go to your dashboard and choose <em>Configuration-&gt;Main Configuration</em>. Look out for </p>
+<pre><code class="language-yaml"># The name of the website
+    sitename: all-mine.org
+    payoff: </code></pre>
+<p>Change <code>all-mine.org</code> to your site name. <em>Save</em> the configuration. Click on <em>View site</em> on top of dashboard and have a look if the site name has changed accordingly.</p>
+<h4 id="other-settings">Other settings</h4>
+<p>Go to your dashboard and click on <em>Settings</em>. Create a new set and start to change settings for <strong>font</strong>, base font <strong>size</strong>, <strong>sort</strong> on homepage, <strong>footer text</strong>. You can also set links here to your <strong>social media accounts</strong> which will appear below the footer (a simple button with first letter of the network name, without any logos). Save your changes and click on <em>View site</em> on top of dashboard to see your modifications.</p>
+<h5 id="current-available-fonts">Current available fonts</h5>
+<blockquote>
+<p>Some basic well designed open source fonts are distributed with flexfolio. You will find 4 fonts in settings at the moment, 2 serif (Crimson, Avrile) and 2 sans serif (Rubik, Eliane). The flexfolio default font is <strong>Rubik</strong>. All fonts are under <em>SIL Open Font License</em> and are available on <a href="https://www.fontlibrary.org">fontlibrary.org</a> collection. In case you want to use the fonts for other purpose please download the origin/distributed package from mentioned sites.</p>
+</blockquote>
                     </section>
                 </div>
             </main>
