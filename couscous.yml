@@ -22,7 +22,7 @@ github:
 
 menu:
     basics:
-        label: Basics
+        label: Why to use this
         items:
             installation:
                 file: basics.md
@@ -30,6 +30,18 @@ menu:
         label: Installation
         items:
             installation:
+                file: installation.md
+                submenu: 
+                    quickinstall:
+                        label: Pre-configured install via SFTP, Bolt CMS included
+                        file: quickinstall.md
+                    shellinstall:
+                        label: Expert install via shell (ssh)
+                        file: expertinstall.md
+    settings:
+        label: Settings
+        items:
+            settings:
                 file: installation.md
                 submenu: 
                     quickinstall:
