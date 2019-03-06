@@ -67,28 +67,30 @@
             {# second column with related stuff if available #}
             {# --------------------------------------------- #}
             <div class="col-sm-12 col-md-6 col-lg-6 col-xl-5">
-                {# text #}
-                {# ---- #}
-                <div class="card">
-                    <div class="card-block">
-                        {{ record.description }}
-                        {# show other records with same relation #}
-                        {# --------------------------------- #}
-                        <p></p>
-                        <h6 style="border-bottom: 1px solid black;">{{ record.related()[0].title }}</h6>
-                        {% setcontent rels = 'work' %}
-                        {% for rel in rels %}
-                        {% if rel.related == record.related() %}
-                        <h4 class="card-title" style="margin-bottom: 0.2rem; border-bottom: 1px solid black;">
-                            <a href="{{ rel.link }}">
-                                {{ rel.title }}</a>
-                        </h4>
-                        {% endif %}
-                        {% endfor %}
+                    {# text #}
+                    {# ---- #}
+                    <div class="card">
+                        <div class="card-block">
+                            {{ record.description }}
+                            {# show other records with same relation #}
+                            {# --------------------------------- #}
+                            <p></p>
+                            {% setcontent rels = 'work' %}
+                            {% for rel in rels %}
+                            {% if loop.index == 1 %}
+                                    <h6 style="border-bottom: 1px solid black;">{{ record.related()[0].title }}</h6>
+                            {% endif %}
+                            {% if rel.related() == record.related() %}
+                            <h4 class="card-title related {%  if record.id == rel.id %}current{% endif %}">
+                                    <a href="{{ rel.link }}">
+                                    {{ rel.title }}</a>
+                            </h4>
+                            {% endif %}
+                            {% endfor %}
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
 
     <div id="scrolldown"><span class="icon-down-open"></span></div> 
     <div onclick="topFunction();" id="scrollup"><span class="icon-up-open"></span></div>
