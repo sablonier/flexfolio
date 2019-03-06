@@ -5,11 +5,13 @@
 {% include 'partials/_navbar.twig' %}
 	  
 	<div class="container-fluid">
-	<div class="col-12">
+	<div class="col-12 card">
+        <p class="small">{{ canonical() }}</p>
         <h2>
-            Seite nicht gefunden (404).
+            Seite nicht gefunden (404)
         </h2>
-        <p><a href="/#">Home</a>.</p>
+        <p></p>  
+        <p><a href="/#">< Home</a></p>
 	</div>
         
 {% include 'partials/_footer.twig' %}

@@ -22,7 +22,7 @@ github:
 
 menu:
     basics:
-        label: Why to use this
+        label: Flexfolio theme
         items:
             installation:
                 file: basics.md
@@ -42,14 +42,7 @@ menu:
         label: Settings
         items:
             settings:
-                file: installation.md
-                submenu: 
-                    quickinstall:
-                        label: Pre-configured install via SFTP, Bolt CMS included
-                        file: quickinstall.md
-                    shellinstall:
-                        label: Expert install via shell (ssh)
-                        file: expertinstall.md
+                file: settings.md
     licence:
         label: About/License
         items:
