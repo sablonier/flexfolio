@@ -926,3 +926,18 @@ label {
   left: 50%; 
   transform: translate(-50%, -50%);
 }
+
+.cookiealert {
+  background: #111 !important;
+}
+.cookiealert .acceptcookies {
+  margin-left: 10px;
+  vertical-align: baseline;
+  background: #fff;
+  color: #111;
+}
+.btn:hover {
+  color: #fff;
+  text-decoration: none;
+  background: #111;
+}

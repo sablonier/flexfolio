@@ -77,7 +77,7 @@
                             <p></p>
                             {% setcontent rels = 'work' %}
                             {% for rel in rels %}
-                            {% if loop.index == 1 %}
+                            {% if loop.first %}
                                     <h6 style="border-bottom: 1px solid black;">{{ record.related()[0].title }}</h6>
                             {% endif %}
                             {% if rel.related() == record.related() %}
