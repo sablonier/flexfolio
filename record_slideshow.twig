@@ -17,7 +17,6 @@
                         {# image, video, document #}
                         {# ----- #}
                         {% if record.gallery[0] %}
-                        {{ record.gallery }}
                         <div id="carouselExampleControls" data-wrap="true" data-interval="false" class="carousel slide" data-ride="carousel">
                             {% for item in record.gallery %}
                                 {% if item.imgimage.file != "" %}
@@ -62,7 +61,7 @@
                                         </div>
                                         </a>
                                         <div class="card-text small">
-                                        {{ item.caption }}
+                                            {{ item.doccaption }}
                                         </div>
                                     </div>
                                 </div>
