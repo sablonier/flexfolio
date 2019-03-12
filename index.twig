@@ -23,6 +23,15 @@
     {# --------- #}
     <div class="container-fluid">
         <div class="row">
+                {% if locales is empty %}
+                    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                        Translate Extension Missing! Please install <a href="https://bolttranslate.github.io/Translate/installation.html"
+                            class="alert-link">translate extension.</a>
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                {% else %}
                 {# get the 4 columns #}
                 {% for key in magic|keys %}
                     <div id="column-{{key}}" class="col-sm-12 col-md-6 col-lg-4 col-xl-3">
@@ -33,10 +42,12 @@
                     {% endfor %}
                     </div>
                 {% endfor %}
+        {% endif %}
         </div> 
     </div>
 </div>
 
 <!--<div id="scrolldown"><span class="icon-down-open"></span></div> -->
+
 <div onclick="topFunction();" id="scrollup"><span class="icon-up-open"></span></div>
 {% include 'partials/_footer.twig' %}
