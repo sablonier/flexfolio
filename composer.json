@@ -1,0 +1,25 @@
+{
+    "name": "sablonier/flexfolio",
+    "description": "Bootstrap 4 Card/Flexbox Portfolio Layout",
+    "type": "bolt-theme",
+    "keywords": ["bootstrap", "flexbox", "portfolio", "responsive"],
+    "require": {
+        "bolt/bolt": "^3.6"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Yves Sablonier",
+            "email": "git@sablonier.ch"
+        }
+    ],
+    "extra": {
+        "bolt-icon": "brand/icon.png",
+        "bolt-screenshots": [
+            "screenshots/flexfolio_teaser.png",
+            "screenshots/flexfolio_desktop_wide.png",
+            "screenshots/flexfolio_tablet_portrait.png",
+            "screenshots/flexfolio_mobile_portrait.png"
+        ]
+    }
+}
