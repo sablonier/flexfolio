@@ -6,6 +6,6 @@
 [Follow the steps here for pre-configured install](quickinstall.html) 
  
  **Option 2: Individual Bolt CMS install via shell (ssh)**. This guide will install Bolt CMS following [official](https://docs.bolt.cm/3.6/installation/installation) Bolt CMS install instructions and install everything else then separately (theme, extensions, configurations). For this install you will need some basic knowledge how to use a shell (i.e. *Terminal* on OSX).
-[Follow the steps here for shell install](shellinstall.html)
+[Follow the steps here for shell/expert install](expertinstall.html)
 
 

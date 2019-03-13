@@ -54,7 +54,7 @@ Point your webbrowser to the address admin panel where you installed Bolt CMS (i
 
 `https://www.myname.com/admin`
 
-Please note that with All Mine Bolt CMS the address of the admin panel is **/admin** and NOT /bolt.
+Please note that with All Mine Bolt CMS configuration the address of the admin panel is **/admin** and NOT /bolt.
 
 #### Install translation extension bolt/translate
 
@@ -62,13 +62,13 @@ Please note that with All Mine Bolt CMS the address of the admin panel is **/adm
 
 `translate`
 
-and browse the versions of this extension. **Install the latest stable version** of the extension "animal/translate" now. In case you see a warning after installing the extension choose "->Configuration/Check Database" and **update the database**. Or do that anyway.
+and browse the versions of this extension. **Install the latest stable version** of the extension "animal/translate". In case you see a warning after installing the extension choose "->Configuration/Check Database" and **update the database**. Or do that anyway.
 
-**Step 2:** Go back to your shell and copy the example extension configuration file with
+**Step 2:** Go back to your shell and copy the example extension configuration file for DE/EN language configuration with
 
 `cp flexfolio/config-examples/extensions/translate.animal.example.yml ../app/config/extensions/translate.animal.yml`
 
-Point your your browser to your webaddress, without /admin in URL and you should see your site. Go back to the dashboard under /admin and tart to publish your content.
+Point your browser to your webaddress, without /admin in URL and you should see your site. Go back to the dashboard and start to publish your content.
 
 
 
