@@ -22,17 +22,15 @@
                                             {% set resimage = item.imgimage.file %}
                                             {% set info = { 'height': imageinfo(resimage).height, 
                                                             'width': imageinfo(resimage).width } %}
-                                                        {% set sizes = [ '320', '480', '640', '960', '1280', '1920' ] %}
-                                                            <img data-sizes="auto" class="lazyload" data-srcset="
-                                                                {% for size in sizes %}
-                                                                    {% set relheight = info.height*size/info.width %}
-                                                                    {% if loop.last %}
-                                                                        {{ resimage|thumbnail(size, relheight, 'r') }} {{size}}w
-                                                                    {% else %}
-                                                                        {{ resimage|thumbnail(size, relheight, 'r') }} {{size}}w,
-                                                                    {% endif %}
-                                                                {% endfor %}"
-                                                            width="100%">
+                                            {% set sizes = [ '320', '480', '640', '960', '1280' ] %}
+                                            <img srcset="
+                                                {% for size in sizes %}
+                                                    {% set relheight = info.height*size/info.width %}
+                                                    {{ resimage|thumbnail(size, relheight, 'r') }} {{size}}w{% if not loop.last %},{% endif %}
+                                                {% endfor %}"
+                                            sizes=" (min-width: 768px) 50vw,
+                                                    100vw"
+                                            width="100%">
                                         <div class="card-text small">
                                             {{ item.imgcaption }}
                                         </div>
@@ -49,22 +47,21 @@
                                 </div>
                                 {% elseif item.docfile != "" %}
                                     {% if item.docpreview != "" %}
-                                        {% set resimage = { 'file' : item.docpreview.file, 'size' : imagesize.large, 'link' : false } %}
                                         <div class="card" >
-                                                {% set resimage = item.docpreview.file %}
-                                                {% set info = { 'height': imageinfo(resimage).height, 
-                                                                'width': imageinfo(resimage).width } %}
-                                                                {% set sizes = [ '320', '480', '640', '960', '1280', '1920' ] %}
-                                                                <img data-sizes="auto" class="lazyload" data-srcset="
-                                                                    {% for size in sizes %}
-                                                                        {% set relheight = info.height*size/info.width %}
-                                                                        {% if loop.last %}
-                                                                            {{ resimage|thumbnail(size, relheight, 'r') }} {{size}}w
-                                                                        {% else %}
-                                                                            {{ resimage|thumbnail(size, relheight, 'r') }} {{size}}w,
-                                                                        {% endif %}
-                                                                    {% endfor %}"
-                                                                width="100%">
+                                        {% set resimage = item.docpreview.file %}
+                                        {% set info = { 'height': imageinfo(resimage).height, 
+                                                        'width': imageinfo(resimage).width } %}
+                                        {% set sizes = [ '320', '480', '640', '960', '1280', '1920' ] %}
+                                        <img data-sizes="auto" class="lazyload" data-srcset="
+                                            {% for size in sizes %}
+                                                {% set relheight = info.height*size/info.width %}
+                                                {% if loop.last %}
+                                                    {{ resimage|thumbnail(size, relheight, 'r') }} {{size}}w
+                                                {% else %}
+                                                    {{ resimage|thumbnail(size, relheight, 'r') }} {{size}}w,
+                                                {% endif %}
+                                            {% endfor %}"
+                                        width="100%">
                                     {% else %}
                                         <div class="card" >
                                         <img src="/theme/flexfolio/images/missing_preview.png" width="100%" alt="No preview.">
