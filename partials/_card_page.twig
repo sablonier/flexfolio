@@ -1,7 +1,7 @@
 <div class="card" id="{{card.id}}">
     <div class="card-block">
         {% if card.previewimage != "" %}
-            <a href="{{ card.link }}"></a>
+            <a href="{{ card.link }}">
                 {% set resimage = card.previewimage %}
                 {% set info = { 'height': imageinfo(resimage).height, 
                                 'width': imageinfo(resimage).width } %}

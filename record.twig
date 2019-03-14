@@ -19,11 +19,26 @@
                         {% if record.gallery != "" %}
                             {% for item in record.gallery %}
                                 {% if item.imgimage.file != "" %}
-                                    {% set resimage = { 'file' : item.imgimage.file, 'size' : imagesize.large, 'link' : false } %}
                                     <div class="card">
-                                        {% if resimage.file != "" %}
-                                            {% include 'partials/_card_resimage.twig' with resimage %}
-                                        {% endif %}
+                                            {% set resimage = item.imgimage.file %}
+                                            {% set info = { 'height': imageinfo(resimage).height, 
+                                                            'width': imageinfo(resimage).width } %}
+                                            {% set sizes = [ '320', '480', '640', '960', '1280' ] %}
+                                            <img srcset="
+                                                {% for size in sizes %}
+                                                    {% set relheight = info.height*size/info.width %}
+                                                    {% if loop.last %}
+                                                        {{ resimage|thumbnail(size, relheight, 'r') }} {{size}}w
+                                                    {% else %}
+                                                        {{ resimage|thumbnail(size, relheight, 'r') }} {{size}}w,
+                                                    {% endif %}
+                                                {% endfor %}"
+                                            sizes=" (max-width: 320) 320px, 
+                                                    (max-width: 480) 480px, 
+                                                    (max-width: 640) 640px,
+                                                    (max-width: 960) 960px,
+                                                    1280px"
+                                            width="100%">
                                         <div class="card-text small">
                                             {{ item.imgcaption }}
                                         </div>
@@ -42,9 +57,25 @@
                                     {% if item.docpreview != "" %}
                                         {% set resimage = { 'file' : item.docpreview.file, 'size' : imagesize.large, 'link' : false } %}
                                         <div class="card" >
-                                        {% if resimage.file != "" %}
-                                            {% include 'partials/_card_resimage.twig' with resimage %}
-                                        {% endif %}
+                                                {% set resimage = item.docpreview.file %}
+                                                {% set info = { 'height': imageinfo(resimage).height, 
+                                                                'width': imageinfo(resimage).width } %}
+                                                {% set sizes = [ '320', '480', '640', '960', '1280' ] %}
+                                                <img srcset="
+                                                    {% for size in sizes %}
+                                                        {% set relheight = info.height*size/info.width %}
+                                                        {% if loop.last %}
+                                                            {{ resimage|thumbnail(size, relheight, 'r') }} {{size}}w
+                                                        {% else %}
+                                                            {{ resimage|thumbnail(size, relheight, 'r') }} {{size}}w,
+                                                        {% endif %}
+                                                    {% endfor %}"
+                                                sizes=" (max-width: 320) 320px, 
+                                                        (max-width: 480) 480px, 
+                                                        (max-width: 640) 640px,
+                                                        (max-width: 960) 960px,
+                                                        1280px"
+                                                width="100%">
                                     {% else %}
                                         <div class="card" >
                                         <img src="/theme/flexfolio/images/missing_preview.png" width="100%" alt="No preview.">
