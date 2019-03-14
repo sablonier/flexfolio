@@ -5,8 +5,8 @@
                 {% set resimage = card.previewimage %}
                 {% set info = { 'height': imageinfo(resimage).height, 
                                 'width': imageinfo(resimage).width } %}
-                {% set sizes = [ '320', '480', '640' ] %}
-                <img srcset="
+                {% set sizes = [ '320', '480', '640', '960', '1280', '1920' ] %}
+                <img data-sizes="auto" class="lazyload" data-srcset="
                     {% for size in sizes %}
                         {% set relheight = info.height*size/info.width %}
                         {% if loop.last %}
@@ -15,7 +15,6 @@
                             {{ resimage|thumbnail(size, relheight, 'r') }} {{size}}w,
                         {% endif %}
                     {% endfor %}"
-                sizes="(max-width: 320) 320px, (max-width: 480) 480px, 640px"
                 width="100%">
             </a>
         {% endif %}
