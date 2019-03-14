@@ -51,16 +51,14 @@
                                         {% set resimage = item.docpreview.file %}
                                         {% set info = { 'height': imageinfo(resimage).height, 
                                                         'width': imageinfo(resimage).width } %}
-                                        {% set sizes = [ '320', '480', '640', '960', '1280', '1920' ] %}
-                                        <img data-sizes="auto" class="lazyload" data-srcset="
+                                        {% set sizes = [ '320', '480', '640', '960', '1280' ] %}
+                                        <img srcset="
                                             {% for size in sizes %}
                                                 {% set relheight = info.height*size/info.width %}
-                                                {% if loop.last %}
-                                                    {{ resimage|thumbnail(size, relheight, 'r') }} {{size}}w
-                                                {% else %}
-                                                    {{ resimage|thumbnail(size, relheight, 'r') }} {{size}}w,
-                                                {% endif %}
+                                                {{ resimage|thumbnail(size, relheight, 'r') }} {{size}}w{% if not loop.last %},{% endif %}
                                             {% endfor %}"
+                                        sizes=" (min-width: 768px) 50vw,
+                                                100vw"
                                         width="100%">
                                     {% else %}
                                         <div class="card" >

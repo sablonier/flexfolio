@@ -57,7 +57,7 @@
                                             <div class="card" >
                                             {% set resimage = item.docpreview.file %}
                                             {% set info = { 'height': imageinfo(resimage).height, 
-                                            'width': imageinfo(resimage).width } %}
+                                                            'width': imageinfo(resimage).width } %}
                                             {% set sizes = [ '320', '480', '640', '960', '1280' ] %}
                                             <img srcset="
                                                 {% for size in sizes %}
