@@ -1,13 +1,13 @@
 
 {% setcontent settings = "settings" limit 1 returnsingle %}
-<footer class="col-12 footer">
-    <div style="margin: 5px;">
-        <div style="border-top: 1px solid black; padding-top: 5px;">
+<footer class="footer">
+    <div>
+        <div style="border-top: 1px solid black;">
             <span class="small">© {{ "now"|date("Y") }} {{ settings.footer }}</span>
         </div>
     </div>
     {% if settings.socialmedia != "" %}
-    <div style="margin: 5px;">
+    <div>
         {% for item in settings.socialmedia %}
             <a href="{{item.links}}"><div class="button">{{item.title|first}}</div></a>
         {% endfor %}
