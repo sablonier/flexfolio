@@ -67,6 +67,18 @@ h4 a:hover {
   text-decoration: none;
 }
 
+.small a {
+  color: #111;
+  background: #fff;
+  text-decoration: none;
+}
+
+.small a:hover {
+  color: #fff;
+  background: #111;
+  text-decoration: none;
+}
+
 footer {
   background: #FFF;
   margin: 20px;
