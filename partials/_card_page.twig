@@ -1,12 +1,11 @@
 <div class="card" id="{{card.id}}">
     <div class="card-block">
-        
         {% if card.previewimage != "" %}
             <a href="{{ card.link }}"></a>
                 {% set resimage = card.previewimage %}
                 {% set info = { 'height': imageinfo(resimage).height, 
                                 'width': imageinfo(resimage).width } %}
-                {% set sizes = [ '320', '480', '800', '1200' ] %}
+                {% set sizes = [ '320', '480', '640' ] %}
                 <img srcset="
                     {% for size in sizes %}
                         {% set relheight = info.height*size/info.width %}
@@ -16,6 +15,7 @@
                             {{ resimage|thumbnail(size, relheight, 'r') }} {{size}}w,
                         {% endif %}
                     {% endfor %}"
+                sizes="(max-width: 320) 320px, (max-width: 480) 480px, 640px"
                 width="100%">
             </a>
         {% endif %} 
