@@ -2,7 +2,7 @@
                 'width': imageinfo(resimage).width } %}
 {% set sizes = [ '320', '384', '480', '576', '640', '768', '800','960', '1024', '1280', '1440' ] %}
 <img srcset="
-    {% for size in sizes %}
+    {%for size in sizes %}
         {% set relheight = info.height*size/info.width %}
         {{ resimage|thumbnail(size, relheight, 'r') }} {{size}}w{% if not loop.last %},{% endif %}
     {% endfor %}"
