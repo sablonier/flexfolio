@@ -4,9 +4,22 @@
     
     {# fetching content #}
     {# ---------------- #}
+
+    {# for bolt market distro only, check contenttypes #}
+    {% if config.get('contenttypes').settings is empty %}
+        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                Please provide Flexfolio Theme contenttypes. Have a look in /theme/flexfolio/config-examples/contenttypes.example.yml
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+        </div>
+    {% endif %}
+
     {% setcontent settings = 'settings' limit 1 returnsingle %}
     {% set homeset = 'works/'~settings.homesort~'/'~settings.homecount  %}
     {% setcontent cards = homeset where { displayhome: true } %}
+
+    
     
     {# getting the magic with rows and columns            #}
     {# i.e. 10 entries should give = 3/3/2/2 not 3/3/3/1  #}
@@ -23,6 +36,7 @@
     {# --------- #}
     <div class="container-fluid">
         <div class="row">
+                {# for bolt market distro only, check if translate extension present #}
                 {% if locales is empty %}
                     <div class="alert alert-danger alert-dismissible fade show" role="alert">
                         Translate Extension Missing! Please install <a href="https://bolttranslate.github.io/Translate/installation.html"
