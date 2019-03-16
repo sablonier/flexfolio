@@ -150,12 +150,19 @@ button, input, optgroup, select, textarea {
   text-decoration: underline;
 }
 
-.navbar-light .navbar-toggler {
-    border: 1px solid #666;
-    border-radius: 0;
-    background: #fff;
-    
+.navbar-toggler {
+  padding: 0.25rem 0.5rem;
+  font-size: 1rem;
+  line-height: 1;
+  background-color: transparent;
+  border-radius: 0;
 }
+
+.navbar-light .navbar-toggler {
+  color: rgba(0, 0, 0, 0.5);
+  border-color: rgba(0, 0, 0, 0.6);
+}
+
 
 nav .nav-link:focus, .navbar-light .navbar-nav .nav-link:hover {
     color: #fff;
