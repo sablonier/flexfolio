@@ -8,12 +8,16 @@
     {% set cards = relatedrecords %}
 
     {# getting the magic with rows and columns            #}
-    {# i.e. 10 entries should give = 3/3/2/2, not 3/3/3/1 #}
+    {# i.e. 10 entries should give = 3/3/2/2 not 3/3/3/1  #}
     {# -------------------------------------------------- #}
     {% if cards|length > 4 %}
-        {% set rows = (cards|length)//4 %}
+    {% set rows = (cards|length)//4 %}
+    {% if cards|length > 7 %}
+        {% set d = 4 %}
+    {% else %}
         {% set d = (cards|length)-(rows*4) %}
-        {% set magic = [ [0,rows+(d//d)], [rows+(d//d), rows+(d//2)|round(0,'floor')], [2*rows+(d//1.5|round(0,'ceil'))+(d//d), rows+(d//3|round(0,'floor'))], [(3*rows)+d, rows] ] %}
+    {% endif %}
+    {% set magic = [ [0,rows+(d//d)], [rows+(d//d), rows+(d//2)|round(0,'floor')], [2*rows+(d//1.5|round(0,'ceil'))+(d//d), rows+(d//3|round(0,'floor'))], [(3*rows)+d, rows] ] %}
     {% else %}
         {% set magic = [ [0,1], [1,1], [2,1], [3,1] ] %}
     {% endif %}
