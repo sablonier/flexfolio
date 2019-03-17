@@ -59,7 +59,7 @@
                         </p>
                         <ul class="menu-list">
                                                                                                                             <li class="">
-                                    <a href="https://sablonier.github.io/flexfolio/installation.html" class="is-active">
+                                    <a href="https://sablonier.github.io/flexfolio/installation.html" class="">
                                         Installation
                                     </a>
                                                                             <ul>
@@ -100,7 +100,7 @@
                                     </a>
                                                                             <ul>
                                                                                                                                     <li class="">
-                                                <a href="https://sablonier.github.io/flexfolio/contenttypes-pages.html" class="">
+                                                <a href="https://sablonier.github.io/flexfolio/contenttypes-pages.html" class="is-active">
                                                     Pages
                                                 </a>
                                             </li>
@@ -148,7 +148,7 @@
                             </span>
                             <span>Fork</span>
                         </a>
-                                                <a href="https://github.com/sablonier/flexfolio/tree/master/docs/installation.md" class="button is-info is-hidden-touch" aria-label="Edit the contents of this page on GitHub">
+                                                <a href="https://github.com/sablonier/flexfolio/tree/master/docs/contenttypes-pages.md" class="button is-info is-hidden-touch" aria-label="Edit the contents of this page on GitHub">
                             <span class="icon is-small">
                                 <i class="fab fa-github"></i>
                             </span>
@@ -158,14 +158,54 @@
 
                 <div class="docs__main--body">
                     <section id="content" class="content">
-                        <h3 id="installation">Installation</h3>
-<blockquote>
-<p>There are two options recently to install Bolt CMS with Flexfolio theme. With quickinstall you will not have to configure any databases or else on your hosting, it's just copy and paste a folder via (S)FTP. Make sure your providers fulfills <a href="https://docs.bolt.cm/3.6/getting-started/requirements">Bolt CMS requirements</a>.</p>
-</blockquote>
-<p><strong>Option 1: Quickinstall</strong> via download and install via (S)FTP. You will need your credentials for your hosting and a FTP-Client (i.e. <a href="https://cyberduck.io/">Cyberduck</a> ):
-<a href="quickinstall.html">Follow the steps here for pre-configured install</a> </p>
-<p><strong>Option 2: Individual Bolt CMS install via shell (ssh)</strong>. This guide will install Bolt CMS following <a href="https://docs.bolt.cm/3.6/installation/installation">official</a> Bolt CMS install instructions and install everything else then separately (theme, extensions, configurations). For this install you will need some basic knowledge how to use a shell (i.e. <em>Terminal</em> on OSX).
-<a href="expertinstall.html">Follow the steps here for shell/expert install</a></p>
+                        <h3 id="contenttype-pages">Contenttype Pages</h3>
+<p>The page content type gives you the structure of your website. Every created page will be added automatically to the menu by default. The contenttype <code>displaymenu</code> gives a checkbox to choose if the page should give a menu entry or not. The taxonomy <code>[ pagesort ]</code> helps to sort the pages and menu appearance.</p>
+<p>For translation to work you will need <code>locale:</code> and the hidden language data and slug fields (see in the example <code>dedata:</code> / <code>endata:</code> and <code>deslug:</code>/<code>enslug:</code>for a german/english setting.</p>
+<pre><code class="language-yaml">    pages:
+        name: Pages
+        singular_name: Page
+        fields:
+        locale:
+            type: locale
+            group: inhalt
+        displaymenu:
+            label: Seite als Menü-Eintrag
+            type: checkbox
+            default: true
+            group: inhalt
+        title:
+            label: Titel
+            type: text
+            class: large
+            group: inhalt
+            translatable: true
+        slug:
+            label: Link
+            type: slug
+            uses: title
+            group: inhalt
+        body:
+            label: Text
+            type: html
+            height: 300px
+            group: inhalt
+            translatable: true
+        dedata:
+            type: hidden
+        deslug:
+            type: locale_data
+            index: true
+        endata:
+            type: hidden
+        enslug:
+            type: locale_data
+            index: true
+        taxonomy: [ pagesort ]
+        record_template: page.twig
+        recordsperpage: 10
+        default_status: published
+        icon_many: "fa:file-text-o"
+        icon_one: "fa:file-text-o"</code></pre>
                     </section>
                 </div>
             </main>

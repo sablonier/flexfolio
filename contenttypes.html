@@ -59,7 +59,7 @@
                         </p>
                         <ul class="menu-list">
                                                                                                                             <li class="">
-                                    <a href="https://sablonier.github.io/flexfolio/installation.html" class="is-active">
+                                    <a href="https://sablonier.github.io/flexfolio/installation.html" class="">
                                         Installation
                                     </a>
                                                                             <ul>
@@ -95,7 +95,7 @@
                         </p>
                         <ul class="menu-list">
                                                                                                                             <li class="">
-                                    <a href="https://sablonier.github.io/flexfolio/contenttypes.html" class="">
+                                    <a href="https://sablonier.github.io/flexfolio/contenttypes.html" class="is-active">
                                         Contenttypes
                                     </a>
                                                                             <ul>
@@ -148,7 +148,7 @@
                             </span>
                             <span>Fork</span>
                         </a>
-                                                <a href="https://github.com/sablonier/flexfolio/tree/master/docs/installation.md" class="button is-info is-hidden-touch" aria-label="Edit the contents of this page on GitHub">
+                                                <a href="https://github.com/sablonier/flexfolio/tree/master/docs/contenttypes.md" class="button is-info is-hidden-touch" aria-label="Edit the contents of this page on GitHub">
                             <span class="icon is-small">
                                 <i class="fab fa-github"></i>
                             </span>
@@ -158,14 +158,17 @@
 
                 <div class="docs__main--body">
                     <section id="content" class="content">
-                        <h3 id="installation">Installation</h3>
+                        <h3 id="content-types-for-this-theme">Content types for this theme</h3>
 <blockquote>
-<p>There are two options recently to install Bolt CMS with Flexfolio theme. With quickinstall you will not have to configure any databases or else on your hosting, it's just copy and paste a folder via (S)FTP. Make sure your providers fulfills <a href="https://docs.bolt.cm/3.6/getting-started/requirements">Bolt CMS requirements</a>.</p>
+<p>With flexfolio theme install you got a subfolder <code>config-examples</code> with example configuration files in your flexfolio folder. With quick install this examples are already active at the right place, in case of an expert install you will need to move this files to your Bolt CMS folder <code>app/config</code> and rename the files (remove <code>.~~example~~.</code> in the filename).</p>
+<p><strong>More about content types and in Bolt CMS: <a href="https://docs.bolt.cm/contenttypes/intro">https://docs.bolt.cm/contenttypes/intro</a></strong></p>
 </blockquote>
-<p><strong>Option 1: Quickinstall</strong> via download and install via (S)FTP. You will need your credentials for your hosting and a FTP-Client (i.e. <a href="https://cyberduck.io/">Cyberduck</a> ):
-<a href="quickinstall.html">Follow the steps here for pre-configured install</a> </p>
-<p><strong>Option 2: Individual Bolt CMS install via shell (ssh)</strong>. This guide will install Bolt CMS following <a href="https://docs.bolt.cm/3.6/installation/installation">official</a> Bolt CMS install instructions and install everything else then separately (theme, extensions, configurations). For this install you will need some basic knowledge how to use a shell (i.e. <em>Terminal</em> on OSX).
-<a href="expertinstall.html">Follow the steps here for shell/expert install</a></p>
+<p>For this theme working correctly you will need 3 contenttypes in your database. IT DOES NOT WORK CORRECTLY with default contenttypes of Bolt CMS. It doesn't break your install but you will see alerts that you need to install the right contenttypes/required extensions.</p>
+<p>When you followed quick or expert install of flexfolio theme you will notice that this contenttypes/fields/definitions needs to be available in your Bolt CMS install:</p>
+<h4 id="content-types-required-contenttypesexampleyml">Content types required (contenttypes.example.yml):</h4>
+<h4><a href="contenttypes-settings.html">Settings</a></h4>
+<h4><a href="contenttypes-pages.html">Pages</a></h4>
+<h4><a href="contenttypes-settings.html">Works</a></h4>
                     </section>
                 </div>
             </main>
