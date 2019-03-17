@@ -1,4 +1,3 @@
-{% set imagesize = { 'small' : 768, 'medium' : 1024, 'large' : 1280, 'xlarge' : 1920 } %}
 {% include 'partials/_header.twig' %}
 
 <body>
@@ -17,7 +16,8 @@
                         {# image, video, document #}
                         {# ----- #}
                         {% if record.gallery[0] %}
-                        <div id="carouselControls" data-wrap="true" data-interval="false" class="carousel slide" data-ride="carousel">
+                        <div id="carouselControls" data-interval="false" class="carousel slide">
+                            <div class="carousel-inner">
                             {% for item in record.gallery %}
                                 {% if item.imgimage.file != "" %}
                                 <div class="carousel-item {% if loop.first %}active{% endif %}">
@@ -63,6 +63,7 @@
                                 </div>
                                 {% endif %}
                             {% endfor %}
+                            </div>
                         </div>
                         <a class="carousel-control-prev" href="#carouselControls" role="button" data-slide="prev">
                           <span class="icon-left-open" aria-hidden="true"></span>
