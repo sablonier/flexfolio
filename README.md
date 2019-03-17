@@ -1,4 +1,4 @@
-[![Maintainability](https://api.codeclimate.com/v1/badges/a99a88d28ad37a79dbf6/maintainability)](https://codeclimate.com/github/sablonier/flexfolio/maintainability)
+<a href="https://codeclimate.com/github/sablonier/flexfolio/maintainability"><img src="https://api.codeclimate.com/v1/badges/61ace4d50a683a0fb45d/maintainability" /></a>
 
 ## Flexfolio theme for Bolt CMS
 Bolt CMS theme for all-mine.org portfolios
