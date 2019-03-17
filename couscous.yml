@@ -43,6 +43,16 @@ menu:
         items:
             settings:
                 file: settings.md
+    contenttypes:
+        label: Content types
+        items:
+            contenttypes:
+                label: 
+                file: contenttypes.md
+                submenu:
+                    pages:
+                        label: Pages
+                        file: contenttypes-pages.md
     licence:
         label: About/License
         items:
