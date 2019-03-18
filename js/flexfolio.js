@@ -123,15 +123,18 @@ window.onload = function(e) {
     breakpointChange();
     displayCards("visible");
     // hide spinner
-    var spinner = document.getElementById('spinner').style.display = "none";
+    //var spinner = document.getElementById('spinner').style.display = "none";
 }
 
 // reload page after resizing, doing sorting again
-window.addEventListener('resize', function () { 
-    setTimeout(function(){
-        window.location.reload(true);
-        breakpointChange();
-    });
+window.addEventListener('resize', function () {
+    var width = window.innerWidth;
+    if (width > 768) {
+        setTimeout(function(){
+            window.location.reload(true);
+            breakpointChange();
+        });
+    }
 });
 
 // check size and give sorting
@@ -150,34 +153,6 @@ function breakpointChange() {
         sortLayout(4);
     }
 }
-
-// sticky pager, scroll indicator
-
-var doc = document.body.clientHeight;
-var h = window.innerHeight;
-
-window.onscroll = function() {
-    
-    // get indicator
-    var y = window.scrollY;
-    var max = Math.round(doc/h);
-    var step = Math.round(y/h);
-    var mobilepager = document.getElementById('mobilepager');
-    
-    document.getElementById("indicator").innerHTML = "";
-    
-    for (i = 0; i < max; i++) {
-		document.getElementById("indicator").innerHTML += "<div id='ind"+i+"' style='margin: auto; background: #FFF; width: 33px; height: 4px;'></div>";
-	}
-	
-	document.getElementById("ind"+step+"").style.border = "1px solid #000";
-		
-    
-    if (mobilepager.className !== "mobilepager fade-in") {
-        mobilepager.className = "mobilepager fade-in";
-        setTimeout(function(){ mobilepager.className = "mobilepager fade-out"; }, 4000);
-	}
-};
 
 window.onscroll = function () {
     scrollFunction()
