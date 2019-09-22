@@ -19,6 +19,11 @@ settings:
             type: integer
             default: 16
             group: Einstellungen
+        lineheight:
+            label: Zeilenabstand
+            type: float
+            default: 1.25
+            group: Einstellungen
         homesort:
             label: Sortierung auf der Startseite (Zufall oder nach Datum)
             enlabel: Sort
