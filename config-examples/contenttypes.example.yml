@@ -65,6 +65,16 @@ settings:
         enslug:
             type: locale_data
             index: true
+        frdata:
+            type: hidden
+        frslug:
+            type: locale_data
+            index: true
+        itdata:
+            type: hidden
+        itslug:
+            type: locale_data
+            index: true
     viewless: true
     singleton: true
     default_status: published
@@ -109,6 +119,16 @@ pages:
         endata:
             type: hidden
         enslug:
+            type: locale_data
+            index: true
+        frdata:
+            type: hidden
+        frslug:
+            type: locale_data
+            index: true
+        itdata:
+            type: hidden
+        itslug:
             type: locale_data
             index: true
     taxonomy: [ pagesort ]
@@ -218,6 +238,16 @@ work:
         endata:
             type: hidden
         enslug:
+            type: locale_data
+            index: true
+        frdata:
+            type: hidden
+        frslug:
+            type: locale_data
+            index: true
+        itdata:
+            type: hidden
+        itslug:
             type: locale_data
             index: true
         template:
