@@ -1,0 +1,15 @@
+<div class="card" id="{{card.id}}">
+        <div class="card-block">
+                <div>
+                {% if card.previewimage != "" %}
+                        {% set resimage = card.previewimage %}
+                        {% include('partials/_resimage_25vw_33vw_50vw_100vw.twig') with { 'resimage' : resimage } %}
+                {% endif %} 
+                {{ card.previewtext }}
+                </div>
+            </a>
+            <div class="card-text small">
+                {{ card.title }}
+            </div>
+        </div>
+</div>

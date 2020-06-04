@@ -131,6 +131,10 @@ pages:
         itslug:
             type: locale_data
             index: true
+        template:
+            type: templateselect
+            filter: 'page*.twig'
+            group: template
     taxonomy: [ pagesort ]
     record_template: page.twig
     recordsperpage: 10
