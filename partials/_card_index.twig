@@ -3,8 +3,12 @@
         <a href="{{ card.link }}">
             <div>
             {% if card.previewimage != "" %}
-                    {% set resimage = card.previewimage %}
+                {% set resimage = card.previewimage %}
+                {% if settings.colsxl >= 3 %}
                     {% include('partials/_resimage_25vw_33vw_50vw_100vw.twig') with { 'resimage' : resimage } %}
+                {% else %}
+                    {% include('partials/_resimage_50vw_100vw.twig') with { 'resimage' : resimage } %}
+                {% endif %}
             {% endif %}
             {{ card.previewtext }}
             </div>

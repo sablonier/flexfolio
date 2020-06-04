@@ -24,6 +24,16 @@ settings:
             type: float
             default: 1.25
             group: Einstellungen
+        colsxl:
+            label: Anzahl Spalten Large/XL
+            type: integer
+            default: 4
+            group: Einstellungen
+        colsmobile:
+            label: Anzahl Spalten Mobile
+            type: integer
+            default: 1
+            group: Einstellungen
         homesort:
             label: Sortierung auf der Startseite (Zufall oder nach Datum)
             enlabel: Sort

@@ -23,7 +23,12 @@
     {# getting the magic with rows and columns            #}
     {# i.e. 10 entries should give = 3/3/2/2 not 3/3/3/1  #}
     {# -------------------------------------------------- #}
-    {% set rows = 4 %}
+    {% if settings.colsxl > 0 %}
+        {% set rows = settings.colsxl %}
+    {% else %}
+        {% set rows = 4 %}
+    {% endif %}
+
     {% set l = cards|length %}
     {% set d = cards|length // rows %}
     {% set r1 = cards|length % rows %}
@@ -68,9 +73,15 @@
                     </div>
                 {% else %}
                 {# get columns #}
+                {% if settings.colsxl == 4 %}
+                        {% set colclass = 'col-sm-12 col-md-6 col-lg-4 col-xl-3' %}
+                    {% elseif settings.colsxl == 3 %}
+                        {% set colclass = 'col-sm-12 col-md-6 col-lg-4 col-xl-4' %}
+                    {% elseif settings.colsxl == 2 %}
+                        {% set colclass = 'col-sm-12 col-md-6 col-lg-6 col-xl-6' %}
+                {% endif %}
                 {% for key in magic|keys %}
-                    <div id="column-{{key}}" class="col-sm-12 col-md-6 col-lg-4 col-xl-3">
-                    
+                    <div id="column-{{key}}" class="{{colclass}}">
                     {# push rows in columns #}
                     {% for card in cards|slice(magic[key][0],magic[key][1]) %}
                             {% include 'partials/_card_index.twig' %}
