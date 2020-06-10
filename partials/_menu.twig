@@ -18,10 +18,17 @@
             </a>
             {% endfor %}
     </ul>
+    {% setcontent settings = 'settings' limit 1 returnsingle %}
     {% if settings.socialmedia != "" %}
     <ul>
         {% for item in settings.socialmedia %}
-            <a href="{{item.links}}"><div class="button">{{item.title|first}}</div></a>
+            <a href="{{item.links}}">
+                {% if item.symbol %}
+                    <div class="nav-link"><i class="{{ item.symbolcode }}" aria-hidden="true"></i></div>
+                {% else %}
+                    <div class="nav-link">{{item.title}}</div>
+                {% endif %}
+            </a>
         {% endfor %}
     </ul>
     {% endif %}
