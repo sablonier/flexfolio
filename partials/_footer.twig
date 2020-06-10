@@ -6,13 +6,6 @@
             <span class="small">© {{ "now"|date("Y") }} {{ settings.footer }}</span>
         </div>
     </div>
-    {% if settings.socialmedia != "" %}
-    <div>
-        {% for item in settings.socialmedia %}
-            <a href="{{item.links}}"><div class="button">{{item.title|first}}</div></a>
-        {% endfor %}
-    </div>
-    {% endif %}
 </footer>
     
     <!-- Assets -->

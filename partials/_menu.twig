@@ -18,4 +18,11 @@
             </a>
             {% endfor %}
     </ul>
+    {% if settings.socialmedia != "" %}
+    <ul>
+        {% for item in settings.socialmedia %}
+            <a href="{{item.links}}"><div class="button">{{item.title|first}}</div></a>
+        {% endfor %}
+    </ul>
+    {% endif %}
 </ul>
