@@ -69,6 +69,13 @@ settings:
                 links:
                     label: Link
                     type: text
+                symbol:
+                    label: Symbol
+                    type: checkbox
+                symbolcode:
+                    label: Font Awesome Code
+                    type: text
+                    placeholder: fab fa-instagram
         dedata:
             type: hidden
         deslug:
